@@ -1,5 +1,9 @@
 # Control Flow Problems
 
+[Back to lesson](../../06-control-flow/lesson.md) · [Hints](hints.md) · [Solutions](solutions.md)
+
+For every problem, write the decision or repetition in plain English before coding. Test at least one boundary value.
+
 1. Check whether a number is positive, negative, or zero.
 2. Find the largest of two numbers without `max()`.
 3. Find the largest of three numbers.

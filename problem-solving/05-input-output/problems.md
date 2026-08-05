@@ -1,5 +1,9 @@
 # Input and Output Problems
 
+[Back to lesson](../../05-input-and-output/lesson.md) · [Hints](hints.md) · [Solutions](solutions.md)
+
+For every problem, first write a sample conversation showing the input prompt and expected output. Then decide the type of each input.
+
 1. Read a name and greet the user.
 2. Read two numbers and print their sum in a sentence.
 3. Print a date using `sep`.

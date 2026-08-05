@@ -1,5 +1,9 @@
 # Fundamentals Problems
 
+[Back to lesson](../../01-python-fundamentals/lesson.md) · [Hints](hints.md) · [Solutions](solutions.md)
+
+For every problem, write the input, output, one example, and one edge case before writing Python code. Use the [problem-solving guide](../../PROBLEM_SOLVING_GUIDE.md) when you need help choosing steps.
+
 Attempt each problem before opening [hints](hints.md) or [solutions](solutions.md).
 
 1. Print a three-line personal profile.

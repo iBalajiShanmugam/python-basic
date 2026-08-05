@@ -1,5 +1,9 @@
 # Exception Handling Problems
 
+[Back to lesson](../../12-exception-handling/lesson.md) · [Hints](hints.md) · [Solutions](solutions.md)
+
+For every problem, identify the operation that can fail, the specific exception, and the friendly message the user should see.
+
 1. Safely convert user input into an integer.
 2. Handle division by zero.
 3. Handle a missing file.

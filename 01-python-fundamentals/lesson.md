@@ -140,15 +140,6 @@ numbers = [1, 2, 3]
 
 If you use `list` as a variable, calling `list("abc")` later will no longer work as expected in that scope.
 
-## Keywords
-
-Keywords already have a meaning in Python, such as `if`, `else`, `for`, `while`, `True`, `False`, and `None`. Do not use them as variable names. You can inspect the current keyword list:
-
-```python
-import keyword
-print(keyword.kwlist)
-```
-
 ## Reading code from top to bottom
 
 ```python

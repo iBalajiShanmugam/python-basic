@@ -1,5 +1,9 @@
 # String Problems
 
+[Back to lesson](../../07-strings/lesson.md) · [Hints](hints.md) · [Solutions](solutions.md)
+
+For every problem, decide whether spaces and letter case matter. Write one normal example and one empty or unusual example.
+
 1. Count the characters in a sentence excluding spaces.
 2. Reverse a string using slicing.
 3. Check whether a word is a palindrome.

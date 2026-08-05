@@ -4,7 +4,7 @@ This is the complete learning route. Read each lesson, complete its homework, so
 
 | Order | Topic | Main outcome | Practice |
 |---:|---|---|---|
-| 00 | Setup | Run Python and create a project | Setup verification |
+| 00 | [Setup](00-setup/README.md) | Run Python and create a project | Setup verification |
 | 01 | [Fundamentals](01-python-fundamentals/lesson.md) | Write valid Python programs | [Problems](problem-solving/01-fundamentals/problems.md) |
 | 02 | [Variables and data types](02-variables-and-data-types/lesson.md) | Represent information correctly | [Problems](problem-solving/02-data-types/problems.md) |
 | 03 | [Type conversion](03-type-conversion/lesson.md) | Safely convert user data | [Problems](problem-solving/03-type-conversion/problems.md) |

@@ -1,5 +1,9 @@
 # Modules and Packages Problems
 
+[Back to lesson](../../13-modules-and-packages/lesson.md) · [Hints](hints.md) · [Solutions](solutions.md)
+
+For every problem, draw the files first and write what responsibility belongs in each file. Keep input, business logic, and storage separate where possible.
+
 1. Create a module containing a greeting function.
 2. Import a function using both import styles.
 3. Create a constants module for tax rates.

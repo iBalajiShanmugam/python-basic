@@ -1,5 +1,9 @@
 # Type Conversion Problems
 
+[Back to lesson](../../03-type-conversion/lesson.md) · [Hints](hints.md) · [Solutions](solutions.md)
+
+For every problem, write the input type, the desired type, an example conversion, and what should happen for invalid input.
+
 1. Convert a string age to an integer and print the next age.
 2. Convert two input prices to floats and add them.
 3. Convert minutes into hours and remaining minutes.

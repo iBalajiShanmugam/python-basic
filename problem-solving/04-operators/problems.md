@@ -1,5 +1,9 @@
 # Operators Problems
 
+[Back to lesson](../../04-operators/lesson.md) · [Hints](hints.md) · [Solutions](solutions.md)
+
+For every problem, name the operator family you need, write one expression by hand, and then verify the result in Python.
+
 1. Calculate the quotient and remainder of two numbers.
 2. Calculate simple interest.
 3. Check whether a number is between two limits.

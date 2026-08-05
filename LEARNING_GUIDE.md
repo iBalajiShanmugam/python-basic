@@ -4,6 +4,20 @@
 
 This course is for someone who is new to Python or wants to rebuild their fundamentals. Previous experience with Java or another programming language is helpful, but not required.
 
+You do not need to know programming before starting. You only need a computer, patience, and a willingness to type and test small programs.
+
+## How the course is organized
+
+Each chapter has the same simple journey:
+
+```text
+Read the explanation → Type the example → Change the example
+→ Solve practice problems → Do homework → Take the checkpoint
+→ Move to the next chapter
+```
+
+The links at the bottom of every lesson take you to the previous chapter, the Course Map, and the next chapter.
+
 ## How to study each lesson
 
 1. Read the learning goals.
@@ -34,6 +48,10 @@ Study one topic over one or two days. Spend at least as much time solving proble
 ## Completion standard
 
 Move forward when you can explain the topic, write a small example without copying, solve at least eight of ten problems, and complete the checkpoint. Revisit the topic if you cannot explain why your solution works.
+
+## A gentle reminder
+
+Errors are not failures. An error is Python telling you what it did not understand. Read the last line of the error first, look at the line number, and change one thing at a time.
 
 ## How to use hints and solutions
 

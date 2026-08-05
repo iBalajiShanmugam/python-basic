@@ -1,5 +1,9 @@
 # Sets and Dictionaries Problems
 
+[Back to lesson](../../09-sets-and-dictionaries/lesson.md) · [Hints](hints.md) · [Solutions](solutions.md)
+
+For every problem, decide whether the data needs order, uniqueness, or key-based lookup before choosing a collection.
+
 1. Remove duplicate values from a list using a set.
 2. Find common values in two lists.
 3. Find values present in one set but not another.

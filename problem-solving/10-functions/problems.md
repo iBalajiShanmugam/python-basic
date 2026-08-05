@@ -1,5 +1,9 @@
 # Functions Problems
 
+[Back to lesson](../../10-functions/lesson.md) · [Hints](hints.md) · [Solutions](solutions.md)
+
+For every problem, write the function name, parameters, return value, and one function call before implementing the body.
+
 1. Write a function that returns the square of a number.
 2. Write a function that checks whether a number is even.
 3. Write a function that returns the largest of three values.
