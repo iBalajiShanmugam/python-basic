@@ -4,7 +4,7 @@ A self-paced Python course for beginners, with a strong focus on clear fundament
 
 This course is written for a first-time programmer, including school students. You do not need to know Java, mathematics beyond school level, or any programming language before you begin.
 
-This course is inspired by the sequence and teaching spirit of the Durga Python notes, but the explanations, examples, and exercises here are written from scratch and updated for Python 3.
+This course is written from scratch for Python 3, with simple explanations, practical examples, and deliberate problem-solving practice.
 
 ## Start here
 
@@ -35,7 +35,6 @@ This course is inspired by the sequence and teaching spirit of the Durga Python 
 | Chapter 13 | [Modules and Packages](13-modules-and-packages/lesson.md) |
 | Final practice | [Projects](projects/README.md) · [Interview Problems](interview-problems/README.md) · [Final Assessment](quizzes/final-assessment.md) |
 
-For a topic-by-topic comparison with the Durga notes, read the [PDF Coverage Review](PDF_COVERAGE.md).
 
 Every lesson has Previous, Course Map, and Next links at the bottom. You can also return here at any time.
 
@@ -78,7 +77,3 @@ That is normal. Use this order:
 - `glossary/` - quick reference for important terms
 
 The main learning path keeps practice inside each lesson. Hints and solution ideas are hidden in collapsed sections so a beginner can stay on one page and reveal help only when needed.
-
-## License and source note
-
-The PDF used as a syllabus reference is not included in this repository. This repository does not reproduce it; it creates original teaching material and practice problems around the same foundational progression.

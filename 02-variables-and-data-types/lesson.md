@@ -75,7 +75,7 @@ middle_name = None
 
 ## A few more built-in types
 
-The PDF introduces a few types that you will meet later. You do not need to use them in your first projects, but you should recognize their names:
+Here are a few additional types that you will meet later. You do not need to use them in your first projects, but you should recognize their names:
 
 ```python
 raw_data = b"ABC"       # bytes: fixed binary data
