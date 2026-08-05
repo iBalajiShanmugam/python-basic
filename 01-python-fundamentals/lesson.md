@@ -63,19 +63,82 @@ The two indented lines run only when the condition is true. Use four spaces cons
 
 ## Identifiers and naming
 
-An identifier is a name for a variable, function, class, or module.
+An identifier is a name used for a variable, function, class, module, or other object in a Python program.
 
-Valid examples:
+### Rules for identifiers
+
+Python applies these rules:
+
+1. An identifier may contain uppercase letters, lowercase letters, digits, and underscores.
+2. It must begin with a letter or an underscore. It cannot begin with a digit.
+3. After the first character, digits are allowed.
+4. Spaces and symbols such as `-`, `$`, `@`, and `!` are not allowed.
+5. An identifier is case-sensitive. `total`, `Total`, and `TOTAL` are different names.
+6. A Python keyword cannot be used as an identifier.
+7. There is no small fixed length limit, but very long names reduce readability.
+8. Python supports many Unicode letters, but beginners should prefer ordinary English letters for portable code.
+
+### Valid identifiers
 
 ```python
 student_name = "Ravi"
 score2 = 90
 _internal_value = 1
+total_price = 250
 ```
 
-Invalid examples include `2score`, `student-name`, `first name`, and `class`, because names cannot start with digits, contain hyphens/spaces, or use keywords.
+### Invalid identifiers
 
-Names are case-sensitive: `total`, `Total`, and `TOTAL` are different names. Prefer descriptive `snake_case` names such as `total_price`.
+```python
+# 2score = 90          # cannot begin with a digit
+# student-name = "Ravi"  # hyphen is an operator, not part of a name
+# first name = "Ravi"    # spaces are not allowed
+# price$ = 100           # $ is not allowed
+# class = "Python"      # class is a keyword
+```
+
+The underscore in `student_name` is a character inside the name. It is not the same as a hyphen. Python reads `student-name` as subtraction between two names.
+
+### Keywords
+
+Keywords are words that already have a special meaning in Python. Common examples are `if`, `else`, `for`, `while`, `def`, `class`, `return`, `import`, `True`, `False`, and `None`.
+
+You can ask Python for the keyword list instead of memorizing it:
+
+```python
+import keyword
+
+print(keyword.kwlist)
+print(keyword.iskeyword("class"))  # True
+print(keyword.iskeyword("student"))  # False
+```
+
+`True`, `False`, and `None` are also protected Python constants. Do not try to redefine them.
+
+### Naming conventions
+
+The rules above determine whether a name is accepted. Naming conventions determine whether the code is easy to read:
+
+| What you are naming | Recommended style | Example |
+|---|---|---|
+| Variable or function | `snake_case` | `total_price`, `calculate_tax()` |
+| Constant | `UPPER_SNAKE_CASE` | `MAX_RETRIES` |
+| Class | `PascalCase` | `StudentRecord` |
+| Internal-by-convention name | leading underscore | `_cache` |
+
+The leading underscore does not make a variable truly private. It communicates an intention to other programmers. Python does not prevent access to `_cache`.
+
+Avoid names that hide the meaning of a built-in function:
+
+```python
+# Avoid this:
+list = [1, 2, 3]
+
+# Prefer this:
+numbers = [1, 2, 3]
+```
+
+If you use `list` as a variable, calling `list("abc")` later will no longer work as expected in that scope.
 
 ## Keywords
 
