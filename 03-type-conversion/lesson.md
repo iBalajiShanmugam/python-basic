@@ -98,7 +98,52 @@ Convert each field according to its meaning. Do not convert everything to `float
 
 ## Practice
 
-[Solve the type conversion problem set](../problem-solving/03-type-conversion/problems.md)
+Try these problems on this page. For each one, write the original type and the type you need after conversion.
+
+### Problems
+
+1. Convert a text age to an integer and print the next age.
+2. Convert two text prices to floats and add them.
+3. Convert total minutes into hours and remaining minutes.
+4. Convert a numeric string into an integer only when it contains a valid whole number.
+5. Predict the result of `bool(0)`, `bool(1)`, `bool("")`, and `bool("False")`.
+6. Identify which of five conversion expressions will raise an error.
+7. Accept a decimal mark and display its rounded integer form.
+8. Convert Celsius text input to Fahrenheit.
+9. Write three examples that cause `ValueError` when passed to `int()`.
+10. Create a conversion plan for quantity, price, and discount inputs.
+
+<details>
+<summary>Show hints</summary>
+
+1. Use `int()` before adding one.
+2. Use `float()` for both values.
+3. Use `//` for complete hours and `%` for remaining minutes.
+4. Check the format before calling `int()`.
+5. Empty values are false; non-empty strings are true.
+6. Check both the argument type and its contents.
+7. Convert text to `float()` before rounding.
+8. Fahrenheit is Celsius times 9/5 plus 32.
+9. Use words, decimal text, and empty text.
+10. Convert count to `int`, money to `float`, and reject negative values.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. `age = int(age_text); print(age + 1)`.
+2. `total = float(first) + float(second)`.
+3. `hours, minutes = divmod(total_minutes, 60)`.
+4. For the beginner case, use `text.isdigit()` before `int(text)`.
+5. The results are `False`, `True`, `False`, and `True`.
+6. `int("12")` works; `int("12.5")`, `int("ten")`, and `int("")` raise `ValueError`.
+7. `rounded = round(float(mark_text))`.
+8. `fahrenheit = float(celsius_text) * 9 / 5 + 32`.
+9. Examples: `int("ten")`, `int("3.5")`, and `int("")`.
+10. Convert and validate each field separately before calculating.
+
+</details>
 
 ## Homework
 

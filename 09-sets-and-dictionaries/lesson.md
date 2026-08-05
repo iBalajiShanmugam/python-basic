@@ -99,7 +99,52 @@ else:
 
 ## Practice
 
-[Solve the sets and dictionaries problem set](../problem-solving/09-sets-dictionaries/problems.md)
+Try these problems on this page. Before choosing a collection, decide whether you need order, uniqueness, or key-based lookup.
+
+### Problems
+
+1. Remove duplicate values from a list using a set.
+2. Find common values in two lists.
+3. Find values present in one set but not another.
+4. Count character frequency using a dictionary.
+5. Count word frequency in a sentence.
+6. Find the product with the highest price.
+7. Merge two dictionaries and handle duplicate keys.
+8. Build a phone book with add and lookup operations.
+9. Group names by their first letter.
+10. Build a shopping cart dictionary and calculate its total.
+
+<details>
+<summary>Show hints</summary>
+
+1. Convert the list to a set.
+2. Use set intersection.
+3. Use set difference.
+4. Increase a dictionary count for each character.
+5. Normalize and split the sentence first.
+6. Iterate over dictionary items.
+7. Decide which dictionary wins when a key appears twice.
+8. Use names as keys and phone numbers as values.
+9. Use the first character as the group key.
+10. Look up each product price and multiply by its quantity.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. `unique_values = set(values)`.
+2. `set(first) & set(second)`.
+3. `set(first) - set(second)`.
+4. `counts[ch] = counts.get(ch, 0) + 1`.
+5. Use the same pattern for words from `sentence.split()`.
+6. `max(products.items(), key=lambda item: item[1])` is one option.
+7. `{**left, **right}` makes the right dictionary win.
+8. Use `phone_book[name] = number` and `.get()` for lookup.
+9. Use `groups.setdefault(first_letter, []).append(name)`.
+10. Add `prices[item] * quantity` for every cart entry.
+
+</details>
 
 ## Homework
 

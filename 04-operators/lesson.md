@@ -340,7 +340,79 @@ print("admin" in {"admin", "user"})
 
 ## Practice
 
-[Solve the operators problem set](../problem-solving/04-operators/problems.md)
+Try these problems on this page. Write your code in a separate `.py` file. Do not open the hints until you have made an attempt.
+
+### Problem 1 - Quotient and remainder
+
+Ask the user for two whole numbers. Display the quotient and the remainder.
+
+### Problem 2 - Simple interest
+
+Read the principal, annual rate, and number of years. Calculate simple interest using `principal * rate * years / 100`.
+
+### Problem 3 - Range check
+
+Read a number and two limits. Print whether the number is inside the inclusive range.
+
+### Problem 4 - System access
+
+Allow access only when the user is logged in and has a valid access card. Use boolean values and `and`.
+
+### Problem 5 - Final price
+
+Read an item price, discount percentage, and tax percentage. Calculate the final price. Clearly decide whether tax is applied before or after the discount.
+
+### Problem 6 - Predict the result
+
+Without running the code first, predict the result of `2 + 3 * 4`, `(2 + 3) * 4`, `17 // 5`, and `17 % 5`. Then verify your answers.
+
+### Problem 7 - Explain division operators
+
+Write a small program that demonstrates `/`, `//`, and `%` using the same two numbers. Add a comment explaining each result.
+
+### Problem 8 - Membership check
+
+Ask for a role and print whether it belongs to the allowed roles `admin`, `owner`, or `teacher`.
+
+### Problem 9 - Value comparison
+
+Create two separate values with the same contents. Compare them using `==`, then explain why `is` should not be used for ordinary value comparison.
+
+### Problem 10 - Delivery rule
+
+Free delivery is available for members, orders of at least Rs. 1000 with weight of at most 5 kg, or orders within 2 km. Write and test the complete boolean expression.
+
+<details>
+<summary>Show hints</summary>
+
+1. `divmod()` can return both values, or use `//` and `%`.
+2. Keep the rate as a percentage and follow the given formula.
+3. Use a chained comparison such as `low <= number <= high`.
+4. Store each condition in a clearly named variable.
+5. Write the business rule in plain English before writing the expression.
+6. Multiplication happens before addition unless parentheses change the order.
+7. Test with `17` and `5`.
+8. Put the allowed roles in a set and use `in`.
+9. `==` compares contents; `is` checks whether two names refer to the same object.
+10. Use parentheses around each larger condition so the rule is easy to read.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. `quotient, remainder = divmod(first, second)`.
+2. `interest = principal * rate * years / 100`.
+3. `inside = low <= number <= high`.
+4. `can_access = is_logged_in and has_card`.
+5. Calculate the discounted amount, then apply tax according to your documented rule.
+6. The results are `14`, `20`, `3`, and `2`.
+7. Print the three expressions side by side and describe the quotient, whole groups, and leftover amount.
+8. `role in {"admin", "owner", "teacher"}`.
+9. Use two separate lists or strings with equal contents and compare them with `==`.
+10. `is_free = is_member or (order_value >= 1000 and weight <= 5) or distance <= 2`.
+
+</details>
 
 ## Homework
 

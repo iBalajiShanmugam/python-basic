@@ -129,7 +129,52 @@ while True:
 
 ## Practice
 
-[Solve the control-flow problem set](../problem-solving/06-control-flow/problems.md)
+Try these problems on this page. Before coding, write the decision or repetition in plain English.
+
+### Problems
+
+1. Check whether a number is positive, negative, or zero.
+2. Find the larger of two numbers without `max()`.
+3. Find the largest of three numbers.
+4. Print numbers from 1 to 20.
+5. Print all even numbers in a range.
+6. Calculate the sum from 1 to `n`.
+7. Check whether a year is a leap year.
+8. Build a menu-driven calculator loop.
+9. Print a multiplication table for a chosen number.
+10. Check whether a number is prime.
+
+<details>
+<summary>Show hints</summary>
+
+1. Compare the number with zero using `if` and `elif`.
+2. Keep the larger value in a variable.
+3. Compare each value with the current largest value.
+4. Use `range(1, 21)`.
+5. A number is even when its remainder after division by 2 is zero.
+6. Start `total` at zero and add each number.
+7. Use the leap-year rule in the lesson's operator examples.
+8. Put the menu inside a loop and provide an exit choice.
+9. Multiply the chosen number by values from 1 to 10.
+10. Test divisors from 2 up to the number, then improve later.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. Use `if number > 0`, `elif number < 0`, otherwise zero.
+2. `largest = a if a > b else b`.
+3. Start with `largest = a`, then compare `b` and `c`.
+4. `for number in range(1, 21): print(number)`.
+5. Add `if number % 2 == 0` inside the loop.
+6. Add every value in `range(1, n + 1)`.
+7. `year % 400 == 0 or (year % 4 == 0 and year % 100 != 0)`.
+8. Continue until the user chooses `exit`.
+9. Use `for multiplier in range(1, 11)`.
+10. If any number from 2 through `n - 1` divides evenly, it is not prime.
+
+</details>
 
 ## Homework
 

@@ -166,7 +166,52 @@ Change the first program to print your name, city, and a learning goal. Then int
 
 ## Practice
 
-[Solve the fundamentals problem set](../problem-solving/01-fundamentals/problems.md)
+Try these problems on this page. Create a separate file such as `fundamentals_practice.py` for your answers.
+
+### Problems
+
+1. Print a three-line personal profile.
+2. Store a product name and price, then print them with labels.
+3. Fix a program that has two indentation errors.
+4. Decide which of these names are valid: `student_name`, `2score`, `first-name`, `class`, `_total`.
+5. Print a receipt header using three separate `print()` calls.
+6. Create variables for a library book and display one sentence about it.
+7. Predict the final value after three assignments to the same variable.
+8. Rewrite a program using descriptive `snake_case` names.
+9. Print the first five multiples of a number.
+10. Explain why `class`, `2name`, and `first name` cannot be identifiers.
+
+<details>
+<summary>Show hints</summary>
+
+1. Use one `print()` call for each line.
+2. Use two variables and an f-string or multiple print values.
+3. Statements inside a block need four spaces.
+4. Check the first character, symbols, spaces, and keywords.
+5. Keep the header values separate.
+6. Use names such as `book_title` and `author_name`.
+7. Read assignments from top to bottom; the last assignment wins.
+8. Replace unclear names with lowercase words joined by underscores.
+9. Use a loop and multiplication.
+10. Explain one rule for each invalid name.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. Store the profile fields and print each with a label.
+2. `print(f"{product_name}: Rs. {price:.2f}")`.
+3. Indent each statement that belongs to the `if` block.
+4. `student_name` and `_total` are valid; the others break identifier rules.
+5. Use three `print()` calls with text such as `"--- Receipt ---"`.
+6. `print(f"{book_title} was written by {author_name}.")`.
+7. The variable contains the value from its final assignment.
+8. Examples include `total_price`, `student_count`, and `book_title`.
+9. For `number` in `range(1, 6)`, print `number * value`.
+10. They begin with a digit, contain a space, or use a keyword.
+
+</details>
 
 ## Homework
 

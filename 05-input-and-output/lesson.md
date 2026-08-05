@@ -122,7 +122,52 @@ This is clear because each value has a label and the money value has consistent 
 
 ## Practice
 
-[Solve the input and output problem set](../problem-solving/05-input-output/problems.md)
+Try these problems on this page. First write the sample conversation, then write the program.
+
+### Problems
+
+1. Read a name and greet the user.
+2. Read two numbers and print their sum in a sentence.
+3. Print a date using `sep`.
+4. Create a formatted product receipt.
+5. Read hours and hourly rate and print salary.
+6. Predict the output of small programs using `sep` and `end`.
+7. Build a temperature conversion prompt and result.
+8. Print a three-column table using f-strings.
+9. Create an invoice with aligned labels.
+10. Design the input and output for a menu item order before writing code.
+
+<details>
+<summary>Show hints</summary>
+
+1. Store `input()` in a variable and use an f-string.
+2. Convert both inputs to numbers.
+3. Pass the date pieces to `print()` with `sep="-"`.
+4. Give every value a label.
+5. Multiply hours by the hourly rate.
+6. `sep` goes between values; `end` replaces the final newline.
+7. Convert the temperature to `float`.
+8. Use alignment such as `:<12` and `:>8`.
+9. Print one label and value per line.
+10. Write example input and output before coding.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. `name = input("Name: ")` followed by `print(f"Hello, {name}!")`.
+2. Convert with `int()` and calculate `first + second`.
+3. `print(year, month, day, sep="-")`.
+4. Use quantity times unit price and format money with `.2f`.
+5. `salary = float(hours) * float(rate)`.
+6. Read the code left to right and mark each separator and ending character.
+7. Use `fahrenheit = celsius * 9 / 5 + 32`.
+8. Use f-string width specifiers.
+9. Separate input, calculation, and display with clear labels.
+10. Decide the prompt, type, and output for every field.
+
+</details>
 
 ## Homework
 

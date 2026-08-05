@@ -69,11 +69,13 @@ That is normal. Use this order:
 
 - `00-setup/` - installation and environment setup
 - Numbered folders - lessons in learning order
-- `problem-solving/` - topic-wise exercises, hints, and solutions
+- `problem-solving/` - optional standalone archive of topic-wise exercises, hints, and solutions
 - `interview-problems/` - mixed interview-oriented practice
 - `projects/` - guided applications
 - `quizzes/` - checkpoints and final assessment
 - `glossary/` - quick reference for important terms
+
+The main learning path keeps practice inside each lesson. Hints and solution ideas are hidden in collapsed sections so a beginner can stay on one page and reveal help only when needed.
 
 ## License and source note
 

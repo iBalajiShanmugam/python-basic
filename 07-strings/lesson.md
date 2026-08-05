@@ -108,7 +108,52 @@ else:
 
 ## Practice
 
-[Solve the string problem set](../problem-solving/07-strings/problems.md)
+Try these problems on this page. Decide first whether spaces and letter case should matter.
+
+### Problems
+
+1. Count characters in a sentence, excluding spaces.
+2. Reverse a string using slicing.
+3. Check whether a word is a palindrome.
+4. Count vowels and consonants.
+5. Normalize a person's name.
+6. Replace repeated spaces with one space.
+7. Count the words in a sentence.
+8. Find the first occurrence of a target word.
+9. Check whether two words are anagrams.
+10. Validate a username using length and allowed characters.
+
+<details>
+<summary>Show hints</summary>
+
+1. Remove spaces or count only characters that are not spaces.
+2. Use a slice with a step of `-1`.
+3. Compare the word with its reverse.
+4. Normalize to lowercase and check membership in `"aeiou"`.
+5. Use `strip()` and `title()`.
+6. Use `split()` and `join()`.
+7. `split()` creates a list of words.
+8. Use `find()` or `in`.
+9. Normalize both words and compare their sorted characters.
+10. Combine length and allowed-character checks.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. `len(sentence.replace(" ", ""))` handles ordinary spaces.
+2. `text[::-1]`.
+3. `word == word[::-1]` after applying the chosen normalization.
+4. Loop through the text and increment the correct counter.
+5. `name.strip().title()`.
+6. `' '.join(text.split())`.
+7. `len(sentence.split())`.
+8. `sentence.lower().find(target.lower())`.
+9. Compare `sorted(left.lower())` and `sorted(right.lower())`.
+10. Check length, letters/digits, and any extra username rules.
+
+</details>
 
 ## Homework
 

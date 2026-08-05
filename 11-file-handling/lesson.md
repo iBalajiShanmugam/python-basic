@@ -117,7 +117,52 @@ print(f"Total: {total:.2f}")
 
 ## Practice
 
-[Solve the file-handling problem set](../problem-solving/11-file-handling/problems.md)
+Try these problems on this page. Before coding, decide what the file should contain and which mode you need.
+
+### Problems
+
+1. Write three lines to a text file.
+2. Read and print a file line by line.
+3. Count lines and words in a file.
+4. Append a new expense to a file.
+5. Copy one file into another file.
+6. Read a CSV-style file and calculate a total column.
+7. Save a list of students as JSON.
+8. Load JSON and display students above a mark threshold.
+9. Build a file-based notes application.
+10. Build an expense tracker that saves data and calculates a total.
+
+<details>
+<summary>Show hints</summary>
+
+1. Use write mode and include a newline after each line.
+2. Iterate over the file object.
+3. Use `splitlines()` and `split()`.
+4. Use append mode so old expenses remain.
+5. Read the source, then write the destination.
+6. Split each row and convert the number column.
+7. Use the `json` module and `json.dump()`.
+8. Load the JSON into Python objects, then filter them.
+9. Decide commands such as add, list, and exit.
+10. Choose one record format and use it consistently.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. `with open(path, "w", encoding="utf-8") as file: file.write(text)`.
+2. Use `for line in file` and `line.rstrip()`.
+3. Read the text and count `splitlines()` and `split()`.
+4. Open with mode `"a"` and write one record followed by `\n`.
+5. Use a read block and a separate write block.
+6. Parse the header, then add the numeric field from each row.
+7. `json.dump(students, file, indent=2)`.
+8. `students = json.load(file)` followed by a loop or filter.
+9. Keep file operations in small functions.
+10. Store each expense with a category and amount, then read and add amounts.
+
+</details>
 
 ## Homework
 

@@ -98,7 +98,52 @@ The loop repeats only for the expected invalid-input case.
 
 ## Practice
 
-[Solve the exception-handling problem set](../problem-solving/12-exceptions/problems.md)
+Try these problems on this page. For each one, name the operation that can fail and the friendly message the user should see.
+
+### Problems
+
+1. Safely convert user input into an integer.
+2. Handle division by zero.
+3. Handle a missing file.
+4. Reject a negative age with `raise`.
+5. Keep asking until the user enters a valid number.
+6. Predict which exception each short program raises.
+7. Make a calculator continue after invalid operations.
+8. Validate a menu choice and report a useful message.
+9. Use `else` and `finally` correctly in a file-reading program.
+10. Build a robust command-line expense entry program.
+
+<details>
+<summary>Show hints</summary>
+
+1. Catch `ValueError` around `int()`.
+2. Catch `ZeroDivisionError` or check the divisor first.
+3. Catch `FileNotFoundError`.
+4. Check the value and raise `ValueError` with a clear message.
+5. Put input inside a loop and leave only after success.
+6. Read the failing operation and match it to an exception type.
+7. Catch expected errors inside the loop.
+8. Check membership in the allowed choices.
+9. `else` is for success; `finally` runs every time.
+10. Validate each field before saving it.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. Put `int(text)` inside `try` and handle `ValueError`.
+2. Handle `ZeroDivisionError` with a message about the denominator.
+3. Catch the missing path and offer a recovery message.
+4. `if age < 0: raise ValueError("age cannot be negative")`.
+5. Use `while True`, `break` after successful conversion, and a specific handler.
+6. Bad numeric text is `ValueError`; zero division is `ZeroDivisionError`; a missing path is `FileNotFoundError`.
+7. Keep the loop outside the individual operation attempt.
+8. Use `if choice not in allowed`.
+9. Put success-only code in `else` and cleanup in `finally`.
+10. Catch expected errors at the user-interface boundary and keep the program running.
+
+</details>
 
 ## Homework
 

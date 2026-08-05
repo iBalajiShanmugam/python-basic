@@ -104,7 +104,52 @@ print(f"Passed count: {len(passed)}")
 
 ## Practice
 
-[Solve the lists and tuples problem set](../problem-solving/08-lists-tuples/problems.md)
+Try these problems on this page. Use a small list by hand before writing the program.
+
+### Problems
+
+1. Calculate the sum of a list of numbers.
+2. Find the largest value without `max()`.
+3. Count even and odd values.
+4. Remove duplicates while preserving order.
+5. Reverse a list without calling `reverse()`.
+6. Rotate a list by one position.
+7. Merge two lists and sort the result.
+8. Find the second-largest distinct number.
+9. Unpack a tuple representing a date.
+10. Build a marks analyzer returning total, average, highest, and lowest values.
+
+<details>
+<summary>Show hints</summary>
+
+1. Start at zero and add each item.
+2. Keep a current largest value.
+3. Test `number % 2` inside a loop.
+4. Use a result list and add an item only when it is not already present.
+5. Slicing can move through a list backwards.
+6. Combine the final item with the earlier slice.
+7. Join the lists before sorting.
+8. Remove duplicates before finding the second value.
+9. Assign tuple values to three names.
+10. Return the four results in a dictionary.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. `total = 0` and add every item.
+2. Initialize from the first item and compare the rest.
+3. Maintain `even_count` and `odd_count`.
+4. `result = []`; append only when `item not in result`.
+5. `values[::-1]`.
+6. `values[-1:] + values[:-1]`.
+7. `sorted(first + second)`.
+8. `sorted(set(values))[-2]` after checking that enough values exist.
+9. `year, month, day = date_tuple`.
+10. Use `sum()`, `len()`, and a loop or built-ins for comparisons.
+
+</details>
 
 ## Homework
 

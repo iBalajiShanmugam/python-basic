@@ -89,7 +89,52 @@ Third-party packages are installed into the active virtual environment. Always a
 
 ## Practice
 
-[Solve the modules problem set](../problem-solving/13-modules/problems.md)
+Try these problems on this page. Draw the files first and write the responsibility of each file.
+
+### Problems
+
+1. Create a module containing a greeting function.
+2. Import a function using two different import styles.
+3. Create a constants module for tax rates.
+4. Add a `__main__` block that demonstrates a module.
+5. Split a calculator into two files.
+6. Build a module containing number utility functions.
+7. Import a module with an alias and explain why it helps.
+8. Organize three related modules into a package.
+9. Identify and fix a circular-import design.
+10. Refactor the expense tracker into a small package with a main entry point.
+
+<details>
+<summary>Show hints</summary>
+
+1. Put the function in `greetings.py`.
+2. Try `import module` and `from module import name`.
+3. Keep named constants in one module.
+4. Put demonstration code under the main guard.
+5. Keep calculations separate from input and display.
+6. Group related number operations in one file.
+7. An alias can make a long module name easier to use.
+8. Give each module one clear responsibility.
+9. Move shared code into a third module.
+10. Separate storage, calculations, and the program entry point.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. Define `greet(name)` in `greetings.py` and import it.
+2. Both styles work; choose the one that keeps names clear.
+3. Put names such as `GST_RATE` in `rates.py`.
+4. Use `if __name__ == "__main__":`.
+5. Use `operations.py` and `main.py`.
+6. Put prime, factorial, and divisor functions in `number_utils.py`.
+7. `import number_utils as numbers`.
+8. Use `storage.py`, `calculations.py`, and `main.py`.
+9. Move shared functionality into a neutral module.
+10. Use separate modules for storage, expense logic, and the entry point.
+
+</details>
 
 ## Homework
 

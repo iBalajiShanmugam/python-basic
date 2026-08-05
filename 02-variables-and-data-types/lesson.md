@@ -109,7 +109,52 @@ Numbers, booleans, strings, and tuples cannot be changed in place. Lists and dic
 
 ## Practice
 
-[Solve the data type problem set](../problem-solving/02-data-types/problems.md)
+Try these problems on this page. For every answer, write down why you chose the data type.
+
+### Problems
+
+1. Choose types for a name, age, salary, employee code, active status, and missing value.
+2. Print the type of an integer, decimal, boolean, string, and `None`.
+3. Calculate the area of a rectangle using two numeric variables.
+4. Store a phone number that begins with zero without losing that zero.
+5. Store whether a customer is eligible for free delivery.
+6. Predict the type of six different values before using `type()` to check.
+7. Explain why a postal code and a quantity may look similar but need different types.
+8. Create variables for a product record and display all fields.
+9. Write a program that reports whether a value is `None`.
+10. Design the data types for a student record and justify each choice.
+
+<details>
+<summary>Show hints</summary>
+
+1. Think about the operations each field needs.
+2. Use `type(value)`.
+3. Area is length multiplied by width.
+4. Put the phone number inside quotes.
+5. Store the result of a comparison in a boolean variable.
+6. Quoted values are strings; comparisons produce booleans.
+7. A postal code is an identifier, not a quantity to calculate.
+8. Use clear names such as `product_name` and `unit_price`.
+9. Use `value is None`.
+10. Make a small table with field, type, and reason.
+
+</details>
+
+<details>
+<summary>Show solution ideas</summary>
+
+1. Use `str`, `int`, `float`, `str`, `bool`, and `None` respectively.
+2. Put each value into `print(type(value))`.
+3. `area = length * width`.
+4. `phone_number = "0123456789"`.
+5. `free_delivery = order_total >= free_delivery_limit`.
+6. `42` is `int`, `4.2` is `float`, `True` is `bool`, text is `str`, and `None` is `NoneType`.
+7. A postal code must preserve formatting; a quantity is used in arithmetic.
+8. Store the fields in separate variables and use an f-string.
+9. `if value is None: print("Missing")`.
+10. Choose types based on meaning and describe the reason in comments.
+
+</details>
 
 ## Homework
 
