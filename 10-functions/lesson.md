@@ -82,6 +82,29 @@ total = add(2, 3)
 
 Use `return` when another part of the program needs to use the result. A function without `return` returns `None`.
 
+Python can return more than one value. It actually packs the values into a tuple:
+
+```python
+def calculate(a, b):
+    return a + b, a - b
+
+addition, difference = calculate(10, 3)
+print(addition, difference)
+```
+
+## Built-in and user-defined functions
+
+Python provides built-in functions such as `print()`, `len()`, `type()`, `sum()`, and `round()`. You can call them without defining them first.
+
+When you write a function with `def`, it is a user-defined function:
+
+```python
+def double(number):
+    return number * 2
+```
+
+Use a built-in function when it clearly solves the problem. Write your own function when you need project-specific behavior or want to give a repeated process a meaningful name.
+
 ## Parameters, arguments, and defaults
 
 ```python

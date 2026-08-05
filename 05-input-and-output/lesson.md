@@ -96,6 +96,36 @@ Total: 91.00
 
 Then identify the type of every input and the formula for the result.
 
+## Command-line arguments (optional foundation)
+
+Input normally arrives after the program starts. Command-line arguments are values written in the command used to start the program:
+
+```bash
+python greet.py Ravi
+```
+
+Python makes these values available through `sys.argv`:
+
+```python
+import sys
+
+print(sys.argv)
+```
+
+The first item, `sys.argv[0]`, is the script name. Values typed after it are strings:
+
+```python
+import sys
+
+if len(sys.argv) < 2:
+    print("Please provide a name")
+else:
+    name = sys.argv[1]
+    print(f"Hello, {name}!")
+```
+
+Convert an argument when it represents a number: `quantity = int(sys.argv[1])`. This is optional for the Basic projects; interactive `input()` is easier to start with.
+
 ## Real-world example
 
 ```python

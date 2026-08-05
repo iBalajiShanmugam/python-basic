@@ -73,6 +73,18 @@ middle_name = None
 
 `None` is not zero, an empty string, or `False`. It means that a value is missing or not available. Check it with `is None`.
 
+## A few more built-in types
+
+The PDF introduces a few types that you will meet later. You do not need to use them in your first projects, but you should recognize their names:
+
+```python
+raw_data = b"ABC"       # bytes: fixed binary data
+editable_data = bytearray(b"ABC")  # bytearray: changeable binary data
+unique_values = frozenset({1, 2, 3}) # frozenset: an unchangeable set
+```
+
+Use ordinary strings, lists, sets, and dictionaries for the Basic projects. Binary data and immutable sets are useful when working with files, networks, or advanced APIs.
+
 ## Inspecting types
 
 ```python

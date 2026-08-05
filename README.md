@@ -35,6 +35,8 @@ This course is inspired by the sequence and teaching spirit of the Durga Python 
 | Chapter 13 | [Modules and Packages](13-modules-and-packages/lesson.md) |
 | Final practice | [Projects](projects/README.md) · [Interview Problems](interview-problems/README.md) · [Final Assessment](quizzes/final-assessment.md) |
 
+For a topic-by-topic comparison with the Durga notes, read the [PDF Coverage Review](PDF_COVERAGE.md).
+
 Every lesson has Previous, Course Map, and Next links at the bottom. You can also return here at any time.
 
 ## If you feel stuck

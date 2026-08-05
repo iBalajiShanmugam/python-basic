@@ -175,6 +175,33 @@ def future_feature():
     pass
 ```
 
+## `else` with loops
+
+Python also allows `else` after a `for` or `while` loop. The `else` block runs when the loop finishes normally. It does not run when `break` stops the loop.
+
+```python
+for number in range(2, 6):
+    print(number)
+else:
+    print("The loop finished normally")
+```
+
+This is useful for searching:
+
+```python
+numbers = [3, 7, 11]
+target = 7
+
+for number in numbers:
+    if number == target:
+        print("Found")
+        break
+else:
+    print("Not found")
+```
+
+If `target` is not found, the loop reaches its end and the `else` block runs. If it is found, `break` runs and the `else` block is skipped.
+
 ## Real-world example: menu loop
 
 ```python

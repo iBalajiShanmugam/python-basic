@@ -233,7 +233,39 @@ print(balance)  # 850
 
 The right side is calculated first, then assigned back to the variable.
 
-## 5. Membership operators
+## 5. Bitwise operators (optional foundation)
+
+Bitwise operators work on the individual binary digits of integers. You can postpone this section until the main course feels comfortable.
+
+| Operator | Name | Example |
+|---|---|---|
+| `&` | bitwise AND | `5 & 3` |
+| `|` | bitwise OR | `5 | 3` |
+| `^` | bitwise XOR | `5 ^ 3` |
+| `~` | bitwise complement | `~5` |
+| `<<` | left shift | `5 << 1` |
+| `>>` | right shift | `5 >> 1` |
+
+For example, `5` is binary `101` and `3` is binary `011`:
+
+```text
+  101
+& 011
+-----
+  001  -> 1
+```
+
+```python
+print(5 & 3)   # 1
+print(5 | 3)   # 7
+print(5 ^ 3)   # 6
+print(5 << 1)  # 10
+print(5 >> 1)  # 2
+```
+
+These operators are common in flags, permissions, compression, and low-level programming. Do not confuse `&` with the logical word `and`.
+
+## 6. Membership operators
 
 `in` and `not in` check whether a value occurs in a container.
 
@@ -253,7 +285,7 @@ print(10 in [5, 10, 15])       # True
 
 Membership asks “does this value occur?” It does not ask whether two objects are the same object.
 
-## 6. Identity operators
+## 7. Identity operators
 
 `is` and `is not` check whether two names refer to the same object in memory. They are not general value-comparison operators.
 
@@ -274,7 +306,7 @@ print(first == second)  # True: same contents
 print(first is second)  # False: different list objects
 ```
 
-## 7. Operator precedence
+## 8. Operator precedence
 
 When an expression contains several operators, Python follows an order. A simplified order is:
 
