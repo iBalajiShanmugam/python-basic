@@ -33,13 +33,84 @@ else:
 
 Before nesting many levels, consider combining conditions with `and` or using a function.
 
+## What is an iterable?
+
+An iterable is a value that contains, or can produce, a sequence of items one at a time. In simple words, Python can “go through” an iterable from its first item to its last item.
+
+Common iterables that you will use are:
+
+| Iterable | Example items produced |
+|---|---|
+| List | `[10, 20, 30]` produces `10`, then `20`, then `30` |
+| Tuple | `("red", "blue")` produces `"red"`, then `"blue"` |
+| String | `"cat"` produces `"c"`, then `"a"`, then `"t"` |
+| Set | `{"Python", "Java"}` produces each value; order is not guaranteed |
+| Dictionary | `{"name": "Ravi", "age": 20}` produces its keys by default |
+| `range()` | `range(1, 4)` produces `1`, then `2`, then `3` |
+
+Examples:
+
+```python
+for number in [10, 20, 30]:
+    print(number)
+
+for letter in "cat":
+    print(letter)
+
+for number in range(1, 4):
+    print(number)
+```
+
+An integer, float, or boolean is not iterable because it is one value, not a group of values:
+
+```python
+# for number in 10:  # TypeError: an integer is not iterable
+#     print(number)
+```
+
+You do not need to memorize the technical definition. When you see `for`, ask: “Can Python visit the values inside this object one by one?”
+
 ## `for` loops
 
-Use `for` to process each item in an iterable:
+Use `for` to process each item in an iterable. The variable after `for` receives one item at a time:
 
 ```python
 for language in ["Python", "Java", "SQL"]:
     print(language)
+```
+
+The loop runs three times:
+
+1. `language` becomes `"Python"`.
+2. `language` becomes `"Java"`.
+3. `language` becomes `"SQL"`.
+
+The loop variable is not required to be called `item`; choose a name that describes each value.
+
+```python
+for student_name in ["Asha", "Ravi", "Meera"]:
+    print(f"Welcome, {student_name}")
+```
+
+### Looping through a dictionary
+
+By default, a dictionary loop visits keys:
+
+```python
+student = {"name": "Ravi", "marks": 86}
+
+for key in student:
+    print(key)
+```
+
+Use `.values()` for values and `.items()` for both keys and values:
+
+```python
+for value in student.values():
+    print(value)
+
+for key, value in student.items():
+    print(f"{key}: {value}")
 ```
 
 ## `range()`
