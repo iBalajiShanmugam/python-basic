@@ -6,6 +6,8 @@ This course is written for a first-time programmer, including school students. Y
 
 This course is written from scratch for Python 3, with simple explanations, practical examples, and deliberate problem-solving practice.
 
+[Open the interactive course website](https://ibalajishanmugam.github.io/python-basic/)
+
 ## Start here
 
 1. Read [Learning Guide](LEARNING_GUIDE.md).
