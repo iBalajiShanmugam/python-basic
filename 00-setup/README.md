@@ -88,3 +88,7 @@ python hello.py
 - [ ] The environment was activated.
 - [ ] `hello.py` runs successfully.
 - [ ] You know how to deactivate it with `deactivate`.
+
+---
+
+[Back to course home](../README.md) · [Start Chapter 1: Python Fundamentals](../01-python-fundamentals/lesson.md)

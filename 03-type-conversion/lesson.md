@@ -1,26 +1,100 @@
 # 03 - Type Conversion
 
-## What you will learn
+## Why conversion is needed
 
-How to convert values and how to recognize invalid conversions.
+`input()` returns a string even when the user types digits:
 
 ```python
-age_text = "25"
-age = int(age_text)
-price = float("19.50")
-label = str(42)
-has_items = bool(["item"])
+first = input("First number: ")
+second = input("Second number: ")
+print(first + second)  # 23 if the inputs were 2 and 3
 ```
 
-`input()` always returns a string. Convert it before performing numeric calculations.
+The strings are joined. Convert them before arithmetic:
+
+```python
+first = int(input("First number: "))
+second = int(input("Second number: "))
+print(first + second)  # 5
+```
+
+## Common conversion functions
+
+### `int()`
+
+```python
+print(int("25"))
+print(int(4.9))       # 4: fractional part is discarded
+```
+
+`int("4.9")` fails because the text is not an integer literal. Convert through `float()` if decimal input is intentionally allowed.
+
+### `float()`
+
+```python
+price = float("19.50")
+print(price * 2)
+```
+
+### `str()`
+
+```python
+order_id = 105
+message = "Order: " + str(order_id)
+```
+
+For formatted output, an f-string is usually clearer: `f"Order: {order_id}"`.
+
+### `bool()`
+
+Most values are truthy or falsy:
+
+```python
+print(bool(0))       # False
+print(bool(1))       # True
+print(bool(""))      # False
+print(bool("False")) # True: non-empty text
+print(bool([]))      # False
+```
+
+Do not convert the string `"False"` to a boolean expecting `False`; it is non-empty text.
+
+### `complex()`
+
+```python
+number = complex(3, 4)
+print(number)  # (3+4j)
+```
+
+This is useful for complex-number work, not ordinary price or age input.
+
+## Errors during conversion
+
+```python
+int("ten")   # ValueError
+int("3.5")   # ValueError
+int(None)     # TypeError
+```
+
+At this stage, read the error and correct the input. Later, exception handling will let you show a friendly message and ask again.
+
+## Converting several fields
 
 ```python
 quantity = int(input("Quantity: "))
 price = float(input("Price: "))
-print(quantity * price)
+total = quantity * price
+print(f"Total: {total:.2f}")
 ```
 
-`int("3.5")` raises `ValueError`; `int(3.5)` works and discards the fractional part. Conversion does not magically make invalid data valid.
+Convert each field according to its meaning. Do not convert everything to `float` just because calculations are involved.
+
+## Common mistakes
+
+- Forgetting that `input()` returns `str`.
+- Calling `int()` on decimal text.
+- Treating non-empty text such as `"no"` as boolean false.
+- Converting before checking what format the user is allowed to enter.
 
 ## Practice
 
@@ -32,4 +106,8 @@ Write a program that reads a person's age in years and converts it into approxim
 
 ## Checkpoint
 
-Explain why `input()` needs conversion for arithmetic and predict the result of `bool(0)`, `bool(1)`, `bool("")`, and `bool("False")`.
+Explain why `input()` needs conversion for arithmetic and predict `bool(0)`, `bool(1)`, `bool("")`, and `bool("False")`.
+
+---
+
+Previous: [Variables and Data Types](../02-variables-and-data-types/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Operators](../04-operators/lesson.md)

@@ -1,18 +1,119 @@
 # 11 - File Handling
 
-## What you will learn
+Variables disappear when a program ends. Files let a program store information for the next run.
 
-How to persist text data safely.
+## Opening a file
+
+```python
+file = open("notes.txt", "r", encoding="utf-8")
+content = file.read()
+file.close()
+```
+
+The `encoding` makes text handling explicit. Calling `close()` matters, but the safer approach is `with`.
+
+## The `with` statement
 
 ```python
 with open("notes.txt", "w", encoding="utf-8") as file:
     file.write("Learn Python\n")
-
-with open("notes.txt", encoding="utf-8") as file:
-    content = file.read()
 ```
 
-The `with` statement closes the file even when a problem occurs. Use `"r"` to read, `"w"` to replace, and `"a"` to append. Be careful with relative paths and never overwrite important files accidentally.
+The file closes automatically when the block ends, even when an error occurs.
+
+## File modes
+
+| Mode | Meaning |
+|---|---|
+| `"r"` | read; file must exist |
+| `"w"` | write; replaces existing content |
+| `"a"` | append at the end |
+| `"x"` | create; fails if file exists |
+
+Be careful with `"w"`: it can erase existing content.
+
+## Reading methods
+
+```python
+with open("notes.txt", encoding="utf-8") as file:
+    all_text = file.read()
+
+with open("notes.txt", encoding="utf-8") as file:
+    first_line = file.readline()
+
+with open("notes.txt", encoding="utf-8") as file:
+    for line in file:
+        print(line.rstrip())
+```
+
+`rstrip()` removes the line ending for display. Avoid calling `.read()` on a huge file when line-by-line processing is enough.
+
+## Relative paths
+
+`open("notes.txt")` looks relative to the program's current working directory, not necessarily the folder containing the `.py` file. Print the current directory while debugging:
+
+```python
+from pathlib import Path
+print(Path.cwd())
+```
+
+`pathlib.Path` is a modern way to work with paths:
+
+```python
+from pathlib import Path
+path = Path("data") / "notes.txt"
+path.parent.mkdir(exist_ok=True)
+path.write_text("Hello\n", encoding="utf-8")
+```
+
+## CSV basics
+
+CSV stores rows and columns. Use the `csv` module instead of manually splitting commas when data may contain commas:
+
+```python
+import csv
+
+with open("students.csv", newline="", encoding="utf-8") as file:
+    for row in csv.DictReader(file):
+        print(row["name"], row["marks"])
+```
+
+## JSON basics
+
+JSON represents dictionaries, lists, strings, numbers, booleans, and null values:
+
+```python
+import json
+
+students = [{"name": "Meera", "marks": 86}]
+with open("students.json", "w", encoding="utf-8") as file:
+    json.dump(students, file, indent=2)
+
+with open("students.json", encoding="utf-8") as file:
+    loaded_students = json.load(file)
+```
+
+## Real-world example: expenses
+
+```python
+with open("expenses.txt", "a", encoding="utf-8") as file:
+    file.write("food,250\n")
+
+total = 0
+with open("expenses.txt", encoding="utf-8") as file:
+    for line in file:
+        category, amount = line.strip().split(",")
+        total += float(amount)
+print(f"Total: {total:.2f}")
+```
+
+## Common mistakes
+
+- Using write mode when append mode was intended.
+- Forgetting `encoding="utf-8"` for text files.
+- Assuming a relative path starts beside the script.
+- Forgetting to handle a missing file.
+- Storing comma-containing data by manually splitting CSV lines.
 
 ## Practice
 
@@ -24,4 +125,8 @@ Create a journal program that appends dated entries to a file and provides a com
 
 ## Checkpoint
 
-Write a program that appends one expense per line and then reads the file to calculate the total.
+Write a program that appends one expense per line and reads the file to calculate the total.
+
+---
+
+Previous: [Functions](../10-functions/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Exception Handling](../12-exception-handling/lesson.md)

@@ -1,44 +1,114 @@
 # 01 - Python Fundamentals
 
-## What you will learn
+This lesson explains the basic rules Python uses to read and run a program.
 
-Python files, indentation, comments, statements, expressions, identifiers, keywords, and naming conventions.
+## Your first program
 
-## Why it matters
-
-Python uses whitespace and a small amount of syntax to express programs clearly. Understanding these rules prevents many beginner errors.
-
-## First example
+Create `hello.py`:
 
 ```python
-# This is a comment.
-message = "Python is readable"
+message = "Hello, Python!"
 print(message)
 ```
 
-Python runs statements from top to bottom. `message = "..."` stores a value; `print(message)` displays it.
+Run it with `python hello.py`. Python executes the assignment first and then calls `print()`.
 
-## Rules
+## Statements and expressions
 
-- Indentation is meaningful; use four spaces.
-- Names are case-sensitive: `name` and `Name` are different.
-- Names may contain letters, digits, and underscores, but cannot start with a digit.
-- Python keywords such as `if`, `for`, and `class` cannot be used as ordinary names.
-- Prefer descriptive `snake_case` names.
+A statement is an instruction Python can execute:
+
+```python
+name = "Asha"       # assignment statement
+print(name)         # function-call statement
+```
+
+An expression produces a value:
+
+```python
+2 + 3               # value: 5
+"Py" + "thon"      # value: "Python"
+```
+
+Expressions can be part of statements: `print(2 + 3)`.
+
+## Comments
+
+Comments explain intent to people and are ignored by Python.
+
+```python
+# Calculate the total before displaying it.
+total = price * quantity
+```
+
+Write comments for decisions or business rules, not for obvious syntax.
+
+## Indentation and blocks
+
+Python uses indentation to show that statements belong to a block:
+
+```python
+temperature = 32
+if temperature > 30:
+    print("Warm day")
+    print("Drink water")
+print("Program complete")
+```
+
+The two indented lines run only when the condition is true. Use four spaces consistently. This is invalid because the body is not indented:
+
+```python
+# if True:
+# print("Missing indentation")
+```
+
+## Identifiers and naming
+
+An identifier is a name for a variable, function, class, or module.
+
+Valid examples:
+
+```python
+student_name = "Ravi"
+score2 = 90
+_internal_value = 1
+```
+
+Invalid examples include `2score`, `student-name`, `first name`, and `class`, because names cannot start with digits, contain hyphens/spaces, or use keywords.
+
+Names are case-sensitive: `total`, `Total`, and `TOTAL` are different names. Prefer descriptive `snake_case` names such as `total_price`.
+
+## Keywords
+
+Keywords already have a meaning in Python, such as `if`, `else`, `for`, `while`, `True`, `False`, and `None`. Do not use them as variable names. You can inspect the current keyword list:
+
+```python
+import keyword
+print(keyword.kwlist)
+```
+
+## Reading code from top to bottom
+
+```python
+price = 100
+discount = 10
+final_price = price - discount
+print(final_price)
+```
+
+The final value is `90` because `final_price` is calculated after both earlier assignments. Later assignments replace the value associated with a name.
 
 ## Common mistakes
 
-```python
-if True:
-print("This is invalid")  # missing indentation
-```
+- Mixing tabs and spaces.
+- Using a name that begins with a digit.
+- Forgetting quotes around text.
+- Expecting a comment to execute.
+- Using a keyword as a variable name.
+- Assuming `Name` and `name` are the same.
 
-Correct:
+## Guided practice
 
-```python
-if True:
-    print("This is valid")
-```
+Change the first program to print your name, city, and a learning goal. Then intentionally remove indentation and read the error message before fixing it.
 
 ## Practice
 
@@ -50,4 +120,8 @@ Create a `profile.py` program that prints a formatted profile using at least fiv
 
 ## Checkpoint
 
-Explain the difference between a statement and an expression, identify three valid variable names, and fix an indentation error without using an editor's auto-format feature.
+Explain the difference between a statement and an expression, identify three valid variable names, and fix an indentation error without using auto-formatting.
+
+---
+
+[Course home](../README.md) · [Course map](../COURSE_MAP.md) · Next: [Variables and Data Types](../02-variables-and-data-types/lesson.md)

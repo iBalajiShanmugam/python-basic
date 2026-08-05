@@ -12,6 +12,29 @@ This course is inspired by the sequence and teaching spirit of the Durga Python 
 4. Solve the linked problem set after every lesson.
 5. Check your work only after making a genuine attempt.
 
+## Complete course path
+
+| Stage | Open |
+|---|---|
+| Course orientation | [Learning Guide](LEARNING_GUIDE.md) |
+| Installation | [Setup](00-setup/README.md) |
+| Chapter 1 | [Python Fundamentals](01-python-fundamentals/lesson.md) |
+| Chapter 2 | [Variables and Data Types](02-variables-and-data-types/lesson.md) |
+| Chapter 3 | [Type Conversion](03-type-conversion/lesson.md) |
+| Chapter 4 | [Operators](04-operators/lesson.md) |
+| Chapter 5 | [Input and Output](05-input-and-output/lesson.md) |
+| Chapter 6 | [Control Flow](06-control-flow/lesson.md) |
+| Chapter 7 | [Strings](07-strings/lesson.md) |
+| Chapter 8 | [Lists and Tuples](08-lists-and-tuples/lesson.md) |
+| Chapter 9 | [Sets and Dictionaries](09-sets-and-dictionaries/lesson.md) |
+| Chapter 10 | [Functions](10-functions/lesson.md) |
+| Chapter 11 | [File Handling](11-file-handling/lesson.md) |
+| Chapter 12 | [Exception Handling](12-exception-handling/lesson.md) |
+| Chapter 13 | [Modules and Packages](13-modules-and-packages/lesson.md) |
+| Final practice | [Projects](projects/README.md) · [Interview Problems](interview-problems/README.md) · [Final Assessment](quizzes/final-assessment.md) |
+
+Every lesson has Previous, Course Map, and Next links at the bottom. You can also return here at any time.
+
 ## What you will build
 
 - Small programs from the first lesson

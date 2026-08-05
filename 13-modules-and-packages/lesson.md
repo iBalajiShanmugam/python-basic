@@ -1,10 +1,46 @@
 # 13 - Modules and Packages
 
-## What you will learn
+As programs grow, one file becomes difficult to understand. Modules let you split related code into reusable files.
 
-How to split a program into reusable files and run a module directly.
+## Importing a standard module
 
-`tax.py`:
+```python
+import math
+print(math.sqrt(25))
+```
+
+The module name keeps the function's origin visible. You can import a selected name:
+
+```python
+from math import pi
+print(pi)
+```
+
+Avoid importing everything with `from module import *`; it makes names unclear.
+
+## Creating a custom module
+
+Create `tax.py`:
+
+```python
+def calculate_tax(amount, rate):
+    return amount * rate
+```
+
+Create `main.py` in the same folder:
+
+```python
+from tax import calculate_tax
+
+tax = calculate_tax(1000, 0.18)
+print(tax)
+```
+
+Python searches the project folder for `tax.py` when running `main.py` from that folder.
+
+## The main guard
+
+If a module contains demonstration code, protect it:
 
 ```python
 def calculate_tax(amount, rate):
@@ -14,15 +50,42 @@ if __name__ == "__main__":
     print(calculate_tax(1000, 0.18))
 ```
 
-Another file can import it:
+When the file is run directly, `__name__` is `"__main__"`. When imported, the demonstration does not run.
+
+## Aliases
 
 ```python
-from tax import calculate_tax
-
-print(calculate_tax(500, 0.18))
+import number_utilities as numbers
+print(numbers.is_prime(7))
 ```
 
-Keep related functions together and avoid circular imports. A package is a folder containing related modules.
+Aliases are useful for long names, but use clear names and do not hide important meaning.
+
+## Packages
+
+A package groups related modules:
+
+```text
+expense_app/
+    __init__.py
+    storage.py
+    calculations.py
+    main.py
+```
+
+`storage.py` should handle persistence, `calculations.py` should contain business rules, and `main.py` should coordinate input and display. This separation makes each file easier to test.
+
+## `pip` and project environments
+
+Third-party packages are installed into the active virtual environment. Always activate `.venv` before installing project dependencies and record dependencies in a requirements file when the project needs them.
+
+## Common mistakes
+
+- Naming a file `math.py`, `json.py`, or another standard-library name.
+- Running a script from a directory where its module cannot be found.
+- Putting input code at module import time.
+- Creating circular imports between modules.
+- Placing all logic in `main.py` instead of separating responsibilities.
 
 ## Practice
 
@@ -34,4 +97,8 @@ Refactor a previous project into at least three modules and document what respon
 
 ## Checkpoint
 
-Split a small calculator into a module containing calculation functions and a separate main program containing input and display logic.
+Split a calculator into a module containing calculation functions and a separate main program containing input and display logic. Explain what the main guard does.
+
+---
+
+Previous: [Exception Handling](../12-exception-handling/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Continue to [Projects](../projects/README.md) or [Interview Problems](../interview-problems/README.md)
