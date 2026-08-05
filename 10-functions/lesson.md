@@ -14,6 +14,61 @@ print(message)
 
 The `def` block creates the function. The call `greet("Asha")` runs it. `name` is a parameter; `"Asha"` is an argument.
 
+## Four common function types
+
+We can group beginner functions by two questions:
+
+1. Does the function receive input through parameters?
+2. Does the function send a result back with `return`?
+
+These are teaching categories, not four different Python keywords.
+
+### Type 1: No parameters and no return value
+
+```python
+def show_welcome():
+    print("Welcome to Python")
+
+show_welcome()
+```
+
+This function always performs the same action. It does not receive data and does not send a result back.
+
+### Type 2: Parameters and no return value
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Asha")
+```
+
+The function receives `name`, but its job is only to display a message.
+
+### Type 3: No parameters and a return value
+
+```python
+def get_course_name():
+    return "Python Basic"
+
+course_name = get_course_name()
+print(course_name)
+```
+
+The function needs no input, but it sends a value back to the caller.
+
+### Type 4: Parameters and a return value
+
+```python
+def add(first, second):
+    return first + second
+
+total = add(10, 20)
+print(total)
+```
+
+This is the most reusable type because it accepts data and produces a result.
+
 ## `return` versus `print`
 
 `print()` displays a value. `return` sends a value to the caller:
@@ -27,7 +82,7 @@ total = add(2, 3)
 
 Use `return` when another part of the program needs to use the result. A function without `return` returns `None`.
 
-## Parameters and defaults
+## Parameters, arguments, and defaults
 
 ```python
 def calculate_total(price, quantity, discount=0):
@@ -39,6 +94,58 @@ print(calculate_total(100, 2, discount=0.10))
 ```
 
 Positional arguments follow order. Keyword arguments name the parameter and make calls clearer. Required parameters should come before default parameters.
+
+```python
+def introduce(name, city="Unknown"):
+    return f"{name} lives in {city}"
+
+print(introduce("Ravi"))
+print(introduce("Ravi", city="Pune"))
+```
+
+Here `name` is required and `city` has a default value. A default is used only when the caller does not provide that argument.
+
+## Variable-length arguments: `*args`
+
+Sometimes a function should accept any number of positional arguments. Put `*` before the parameter name:
+
+```python
+def add_all(*numbers):
+    print(numbers)       # a tuple containing all received values
+    return sum(numbers)
+
+print(add_all(2, 4))
+print(add_all(2, 4, 6, 8))
+```
+
+The name `args` is a convention, not a special word. `*numbers` collects extra positional arguments into a tuple. Use `*args` only when a variable number of values is genuinely useful; ordinary parameters are easier for beginners to read.
+
+## Variable-length keyword arguments: `**kwargs`
+
+Sometimes a function should accept extra named options. Put `**` before the parameter name:
+
+```python
+def show_profile(**details):
+    for key, value in details.items():
+        print(f"{key}: {value}")
+
+show_profile(name="Meera", city="Hyderabad", role="Student")
+```
+
+`**details` collects the named arguments into a dictionary. The name `kwargs` is also only a convention.
+
+### `*args` and `**kwargs` together
+
+```python
+def report(title, *scores, **metadata):
+    print(title)
+    print(f"Average: {sum(scores) / len(scores):.2f}")
+    print(metadata)
+
+report("Math", 80, 90, 85, student="Ravi", term="First")
+```
+
+Learn the idea, but do not use these tools everywhere. Prefer clear named parameters when the number of inputs is known.
 
 ## Scope
 
@@ -103,6 +210,9 @@ Each function has one responsibility, so changing input or display does not requ
 - Using global variables unnecessarily.
 - Returning too early inside a loop.
 - Forgetting a recursion base case.
+- Confusing `*args` with a normal list parameter.
+- Forgetting that `**kwargs` collects named values in a dictionary.
+- Using `*args` or `**kwargs` when simple named parameters would be clearer.
 
 ## Practice
 
