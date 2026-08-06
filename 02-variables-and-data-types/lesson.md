@@ -1,4 +1,22 @@
+---
+layout: default
+title: Variables and Data Types
+parent: Lessons
+nav_order: 2
+permalink: /lessons/variables-and-data-types/
+course_lesson: true
+course_index: "02"
+previous_page: /lessons/fundamentals/
+previous_title: Python Fundamentals
+next_page: /lessons/type-conversion/
+next_title: Type Conversion
+---
+
 # 02 - Variables and Data Types
+
+## A simple picture
+
+A variable is like a name sticker on a box. The sticker helps us find the value inside. The data type tells Python what kind of value it is, just as a label may say “books,” “toys,” or “water.”
 
 ## Variables
 
@@ -73,9 +91,10 @@ middle_name = None
 
 `None` is not zero, an empty string, or `False`. It means that a value is missing or not available. Check it with `is None`.
 
-## A few more built-in types
+<details>
+<summary>Optional preview: types used in later courses</summary>
 
-Here are a few additional types that you will meet later. You do not need to use them in your first projects, but you should recognize their names:
+These additional types are useful for files, networks, and advanced APIs. You do not need them in the Basic projects:
 
 ```python
 raw_data = b"ABC"       # bytes: fixed binary data
@@ -85,12 +104,16 @@ unique_values = frozenset({1, 2, 3}) # frozenset: an unchangeable set
 
 Use ordinary strings, lists, sets, and dictionaries for the Basic projects. Binary data and immutable sets are useful when working with files, networks, or advanced APIs.
 
+</details>
+
 ## Inspecting types
 
 ```python
-values = [28, 19.5, True, "Python", None]
-for value in values:
-    print(value, type(value))
+print(28, type(28))
+print(19.5, type(19.5))
+print(True, type(True))
+print("Python", type("Python"))
+print(None, type(None))
 ```
 
 `type()` is useful while learning and debugging. In larger programs, choose clear data models rather than repeatedly checking types.
@@ -108,9 +131,64 @@ supplier_note = None
 
 Each type matches the meaning of the field. `product_code` is text even though it contains digits.
 
+<details>
+<summary>Optional preview: values that can and cannot change</summary>
+
 ## Mutable and immutable values
 
 Numbers, booleans, strings, and tuples cannot be changed in place. Lists and dictionaries can be changed; they are introduced later. This difference matters when multiple names refer to the same collection.
+
+</details>
+
+> **Important fact:** quotation marks change meaning. `25` is an integer that can be used as a quantity; `"25"` is text made from the characters `2` and `5`.
+
+## Bug Hunter
+
+### Bug 1 — missing quotation marks
+
+```python
+city = Chennai
+print(city)
+```
+
+### Bug 2 — a code is not a quantity
+
+```python
+student_code = 007
+print(student_code)
+```
+
+Python 3 does not allow a decimal integer literal with a leading zero. A student code is an identifier, so store it as text.
+
+### Bug 3 — unclear meaning
+
+```python
+x = "Notebook"
+y = 45.50
+```
+
+The code runs, but another learner cannot easily understand the names.
+
+<details>
+<summary>Show Bug Hunter fixes</summary>
+
+```python
+city = "Chennai"
+
+student_code = "007"
+
+product_name = "Notebook"
+unit_price = 45.50
+```
+
+</details>
+
+<details>
+<summary>Optional deeper look: how does Python know a type?</summary>
+
+Every Python value is an object that remembers its own type. A variable name does not have a permanently fixed type; the name refers to an object, and the object has the type. That is why `type(value)` can inspect the value at runtime.
+
+</details>
 
 ## Common mistakes
 
@@ -127,13 +205,13 @@ Try these problems on this page. For every answer, write down why you chose the 
 
 1. Choose types for a name, age, salary, employee code, active status, and missing value.
 2. Print the type of an integer, decimal, boolean, string, and `None`.
-3. Calculate the area of a rectangle using two numeric variables.
+3. Store the length and width of a rectangle using numeric variables, then print both types.
 4. Store a phone number that begins with zero without losing that zero.
-5. Store whether a customer is eligible for free delivery.
+5. Store whether an item is available using the boolean value `True`.
 6. Predict the type of six different values before using `type()` to check.
 7. Explain why a postal code and a quantity may look similar but need different types.
 8. Create variables for a product record and display all fields.
-9. Write a program that reports whether a value is `None`.
+9. Store a missing middle name with `None`, then print the value and its type.
 10. Design the data types for a student record and justify each choice.
 
 <details>
@@ -141,13 +219,13 @@ Try these problems on this page. For every answer, write down why you chose the 
 
 1. Think about the operations each field needs.
 2. Use `type(value)`.
-3. Area is length multiplied by width.
+3. Whole measurements can use `int`; measurements with decimal parts can use `float`.
 4. Put the phone number inside quotes.
-5. Store the result of a comparison in a boolean variable.
+5. Use a clear name such as `is_available` and store `True`.
 6. Quoted values are strings; comparisons produce booleans.
 7. A postal code is an identifier, not a quantity to calculate.
 8. Use clear names such as `product_name` and `unit_price`.
-9. Use `value is None`.
+9. Use `middle_name = None`, then print `middle_name` and `type(middle_name)`.
 10. Make a small table with field, type, and reason.
 
 </details>
@@ -157,7 +235,7 @@ Try these problems on this page. For every answer, write down why you chose the 
 
 1. Use `str`, `int`, `float`, `str`, `bool`, and `None` respectively.
 2. Put each value into `print(type(value))`.
-3. `area = length * width`.
+3. Store values such as `length = 10` and `width = 4.5`, then use `type()`.
 4. `phone_number = "0123456789"`.
 5. `free_delivery = order_total >= free_delivery_limit`.
 6. `42` is `int`, `4.2` is `float`, `True` is `bool`, text is `str`, and `None` is `NoneType`.

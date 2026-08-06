@@ -1,3 +1,10 @@
+---
+layout: default
+title: How to Learn
+nav_order: 3
+permalink: /learning-guide/
+---
+
 # Learning Guide
 
 ## Who this course is for
@@ -20,11 +27,11 @@ The links at the bottom of every lesson take you to the previous chapter, the Co
 
 ## How to study each lesson
 
-1. Read the learning goals.
+1. Read the simple picture and the explanation of each new word.
 2. Type the examples yourself. Do not only copy and paste.
 3. Change the examples and observe what happens.
 4. Complete the practice activities.
-5. Solve the ten linked problems without opening the solutions.
+5. Solve the ten problems on the lesson page without opening the solutions.
 6. Take the checkpoint.
 7. Record the mistakes you made and what caused them.
 

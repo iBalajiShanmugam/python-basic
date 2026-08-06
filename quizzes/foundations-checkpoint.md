@@ -1,3 +1,12 @@
+---
+layout: default
+title: Foundations Checkpoint
+parent: Quizzes and Assessments
+grand_parent: Practice and Projects
+nav_order: 1
+permalink: /practice/quizzes/foundations/
+---
+
 # Foundations Checkpoint
 
 1. Explain why `input()` usually needs conversion.

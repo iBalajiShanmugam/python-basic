@@ -1,3 +1,12 @@
+---
+layout: default
+title: String Problems
+parent: Interview Problems
+grand_parent: Practice and Projects
+nav_order: 2
+permalink: /practice/interview-problems/strings/
+---
+
 # String Problems
 
 1. Reverse a string.

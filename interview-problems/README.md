@@ -1,3 +1,12 @@
+---
+layout: default
+title: Interview Problems
+parent: Practice and Projects
+nav_order: 3
+has_children: true
+permalink: /practice/interview-problems/
+---
+
 # Basic Python Interview Problem Bank
 
 Complete this bank after finishing the numbered lessons. First solve on paper, then write code, then explain time and space trade-offs in simple words.

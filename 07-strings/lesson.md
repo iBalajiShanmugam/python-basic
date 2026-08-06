@@ -1,6 +1,32 @@
+---
+layout: default
+title: Strings
+parent: Lessons
+nav_order: 7
+permalink: /lessons/strings/
+course_lesson: true
+course_index: "07"
+previous_page: /lessons/control-flow/
+previous_title: Control Flow
+next_page: /lessons/lists-and-tuples/
+next_title: Lists and Tuples
+---
+
 # 07 - Strings
 
 Strings represent text. They are ordered sequences of characters and are immutable.
+
+## A simple picture
+
+A string is like a train made of character carriages:
+
+```text
+"Python"
+ 0 1 2 3 4 5   <- positions called indexes
+ P y t h o n
+```
+
+You can inspect a carriage or build a new train, but you cannot replace one carriage inside the existing string.
 
 ## Creating strings
 
@@ -19,7 +45,7 @@ message = "He said, \"Learn Python.\""
 
 ## Indexing
 
-Indexes start at zero:
+An **index** is the numbered position of one character. Indexes start at zero:
 
 ```python
 word = "Python"
@@ -32,7 +58,7 @@ print(word[-1])  # n
 
 ## Slicing
 
-`text[start:stop:step]` stops before `stop`:
+A **slice** copies a selected part of a string. `text[start:stop:step]` stops before `stop`:
 
 ```python
 word = "Python"
@@ -62,6 +88,17 @@ clean_name = name.strip().title()
 print(clean_name)  # Ravi Sharma
 ```
 
+> **Important fact:** string methods do not change the original string. Save the returned string when you need it.
+
+```python
+name = "  maya  "
+name.strip()
+print(name)  # The spaces are still present.
+
+clean_name = name.strip()
+print(clean_name)  # maya
+```
+
 ## Useful string methods
 
 | Method | Purpose | Example |
@@ -76,6 +113,8 @@ print(clean_name)  # Ravi Sharma
 | `.startswith()` | check beginning | `code.startswith("PY")` |
 | `.endswith()` | check ending | `file.endswith(".py")` |
 | `.find()` | find index or `-1` | `text.find("py")` |
+
+`.split()` returns a group called a list, and `.join()` combines a group of strings. Lists are taught fully in the next chapter.
 
 ## Searching and counting
 
@@ -106,6 +145,54 @@ else:
 - Trying to modify a character directly.
 - Comparing text without deciding whether case should matter.
 
+## Bug Hunter
+
+### Bug 1 — index outside the string
+
+```python
+word = "cat"
+print(word[3])
+```
+
+### Bug 2 — immutable string
+
+```python
+word = "cat"
+word[0] = "b"
+print(word)
+```
+
+### Bug 3 — returned value ignored
+
+```python
+name = "  maya  "
+name.strip()
+print(name)
+```
+
+<details>
+<summary>Show Bug Hunter fixes</summary>
+
+```python
+# Bug 1: valid indexes are 0, 1, and 2.
+print(word[2])
+
+# Bug 2: build a new string.
+word = "b" + word[1:]
+
+# Bug 3: save the new string.
+name = name.strip()
+```
+
+</details>
+
+<details>
+<summary>Optional deeper look: text and memory</summary>
+
+Python strings store Unicode text and are immutable. Unicode allows one program to represent many writing systems and symbols. Because a string cannot change in place, operations such as slicing, replacing, or joining produce a new string object. Repeatedly joining thousands of pieces with `+` can be slower than collecting them and using `.join()` once.
+
+</details>
+
 ## Practice
 
 Try these problems on this page. Decide first whether spaces and letter case should matter.
@@ -120,7 +207,7 @@ Try these problems on this page. Decide first whether spaces and letter case sho
 6. Replace repeated spaces with one space.
 7. Count the words in a sentence.
 8. Find the first occurrence of a target word.
-9. Check whether two words are anagrams.
+9. **Challenge:** check whether two words are anagrams after learning `sorted()` and lists in Chapter 08.
 10. Validate a username using length and allowed characters.
 
 <details>

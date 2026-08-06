@@ -1,3 +1,12 @@
+---
+layout: default
+title: Functions and Files Checkpoint
+parent: Quizzes and Assessments
+grand_parent: Practice and Projects
+nav_order: 3
+permalink: /practice/quizzes/functions-and-files/
+---
+
 # Functions and Files Checkpoint
 
 1. Write a function with a default argument.

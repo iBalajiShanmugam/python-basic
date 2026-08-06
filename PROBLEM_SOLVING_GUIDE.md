@@ -1,3 +1,11 @@
+---
+layout: default
+title: Problem-Solving Guide
+parent: Practice and Projects
+nav_order: 1
+permalink: /practice/problem-solving-guide/
+---
+
 # Problem-Solving Guide
 
 Python syntax is only one part of programming. The goal of this course is to develop the ability to turn a requirement into a working algorithm.

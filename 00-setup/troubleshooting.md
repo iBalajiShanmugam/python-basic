@@ -1,3 +1,11 @@
+---
+layout: default
+title: Troubleshooting
+parent: Setup
+nav_order: 3
+permalink: /setup/troubleshooting/
+---
+
 # Setup Troubleshooting
 
 ## `python` is not recognized
@@ -25,3 +33,29 @@ On Windows:
 ## A program does not run
 
 Read the complete error message. Note the file name and line number, check indentation, and reproduce the error with the smallest possible program.
+
+## Python says it cannot open the file
+
+The terminal is probably in a different folder. Use `pwd` on macOS/Linux or `Get-Location` on PowerShell. Then list files with `ls` or `Get-ChildItem`. Use `cd` to enter the folder containing your `.py` file.
+
+## The file is really named `hello.py.txt`
+
+Some editors hide filename endings. Ask the editor or file manager to show extensions and save the file exactly as `hello.py`.
+
+## I see `>>>`
+
+You are inside Python's interactive prompt, not the normal terminal. Type `exit()` and press Enter. Then run the saved file with `python hello.py`, `py hello.py`, or `python3 hello.py`.
+
+## PowerShell blocks `.venv` activation
+
+Activation is convenient but not required. Run the environment's interpreter directly:
+
+```powershell
+.venv\Scripts\python.exe hello.py
+```
+
+Do not copy random security-setting commands from the internet. Ask a parent, teacher, or administrator when using a managed computer.
+
+---
+
+[Back to Setup](README.md) · [Terminal Basics](terminal-basics.md)

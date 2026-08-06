@@ -1,3 +1,12 @@
+---
+layout: default
+title: Contact Book
+parent: Guided Projects
+grand_parent: Practice and Projects
+nav_order: 4
+permalink: /practice/projects/contact-book/
+---
+
 # Project 04 - Contact Book
 
 Create a menu-driven program to add, search, update, and delete contacts. Use a dictionary keyed by contact name.

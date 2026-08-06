@@ -1,8 +1,37 @@
+---
+layout: default
+title: Control Flow
+parent: Lessons
+nav_order: 6
+permalink: /lessons/control-flow/
+course_lesson: true
+course_index: "06"
+previous_page: /lessons/input-and-output/
+previous_title: Input and Output
+next_page: /lessons/strings/
+next_title: Strings
+---
+
 # 06 - Control Flow
 
 Control flow decides which statements run and how often they run.
 
+## A simple picture
+
+Imagine walking through a game maze:
+
+- a condition chooses one path;
+- a `for` loop visits each checkpoint;
+- a `while` loop keeps moving while a rule remains true;
+- `break` is an emergency exit.
+
+```text
+start -> question? -> chosen path -> repeat if needed -> finish
+```
+
 ## Conditions
+
+A **condition** is an expression whose answer is `True` or `False`. A **branch** is one possible path through the program.
 
 ```python
 score = 72
@@ -16,6 +45,8 @@ print(grade)
 ```
 
 Python tests conditions from top to bottom and runs the first matching branch. The `else` branch runs when no condition matches.
+
+Notice the colon `:` and four beginning spaces. The spaces show which lines belong to each branch.
 
 ## Nested conditions
 
@@ -31,11 +62,18 @@ else:
     print("Not eligible")
 ```
 
-Before nesting many levels, consider combining conditions with `and` or using a function.
+Before nesting many levels, consider combining clear conditions with `and`. Functions provide another organisation tool in Chapter 10.
 
 ## What is an iterable?
 
-An iterable is a value that contains, or can produce, a sequence of items one at a time. In simple words, Python can “go through” an iterable from its first item to its last item.
+An iterable is a value that contains, or can produce, items one at a time. In simple words, Python can “go through” it.
+
+Start with two iterables you already recognise:
+
+- a string produces one character at a time;
+- `range()` produces one number at a time.
+
+A **list** is a group written inside square brackets, such as `[10, 20, 30]`. Lists receive a complete lesson in Chapter 08. The table below is a map of iterable types you will gradually learn; you do not need to master them here.
 
 Common iterables that you will use are:
 
@@ -48,12 +86,9 @@ Common iterables that you will use are:
 | Dictionary | `{"name": "Ravi", "age": 20}` produces its keys by default |
 | `range()` | `range(1, 4)` produces `1`, then `2`, then `3` |
 
-Examples:
+Beginner examples:
 
 ```python
-for number in [10, 20, 30]:
-    print(number)
-
 for letter in "cat":
     print(letter)
 
@@ -72,25 +107,28 @@ You do not need to memorize the technical definition. When you see `for`, ask: �
 
 ## `for` loops
 
-Use `for` to process each item in an iterable. The variable after `for` receives one item at a time:
+Use `for` to process each item in an iterable. The name after `for` receives one item at a time. This name is called the **loop variable**:
 
 ```python
-for language in ["Python", "Java", "SQL"]:
-    print(language)
+for number in range(1, 4):
+    print(number)
 ```
 
 The loop runs three times:
 
-1. `language` becomes `"Python"`.
-2. `language` becomes `"Java"`.
-3. `language` becomes `"SQL"`.
+1. `number` becomes `1`.
+2. `number` becomes `2`.
+3. `number` becomes `3`.
 
 The loop variable is not required to be called `item`; choose a name that describes each value.
 
 ```python
-for student_name in ["Asha", "Ravi", "Meera"]:
-    print(f"Welcome, {student_name}")
+for letter in "Python":
+    print(letter)
 ```
+
+<details>
+<summary>Preview: looping through dictionaries from Chapter 09</summary>
 
 ### Looping through a dictionary
 
@@ -112,6 +150,8 @@ for value in student.values():
 for key, value in student.items():
     print(f"{key}: {value}")
 ```
+
+</details>
 
 ## `range()`
 
@@ -152,6 +192,8 @@ while attempts < 3:
 
 Always ensure something inside the loop can eventually make the condition false. Otherwise the loop never ends.
 
+> **Important fact:** before running a `while` loop, point to the line that will eventually make its condition false. If no such line exists, the loop may run forever.
+
 ## `break`, `continue`, and `pass`
 
 ```python
@@ -171,9 +213,12 @@ for number in range(1, 6):
 `pass` does nothing and is useful temporarily while designing a block:
 
 ```python
-def future_feature():
+score = 80
+if score >= 50:
     pass
 ```
+
+The program above is valid, but `pass` produces no output. Replace it when the branch is ready.
 
 ## `else` with loops
 
@@ -225,6 +270,61 @@ while True:
 - Putting `break` outside the intended loop.
 - Using `continue` without understanding which code it skips.
 
+## Bug Hunter
+
+### Bug 1 — missing colon
+
+```python
+age = 12
+if age >= 10
+    print("Welcome")
+```
+
+### Bug 2 — endless loop
+
+```python
+count = 1
+while count <= 3:
+    print(count)
+```
+
+### Bug 3 — wrong range ending
+
+```python
+for number in range(1, 5):
+    print(number)
+```
+
+The programmer expects `1` through `5`, but `range()` stops before its stop value.
+
+<details>
+<summary>Show Bug Hunter fixes</summary>
+
+```python
+# Bug 1
+if age >= 10:
+    print("Welcome")
+
+# Bug 2
+count = 1
+while count <= 3:
+    print(count)
+    count += 1
+
+# Bug 3
+for number in range(1, 6):
+    print(number)
+```
+
+</details>
+
+<details>
+<summary>Optional deeper look: how does a <code>for</code> loop get values?</summary>
+
+Python asks the iterable for an **iterator**, an object that supplies one item at a time. The loop repeatedly asks that iterator for its next value. A special internal signal named `StopIteration` tells the loop that no items remain. Intermediate Python studies this protocol directly.
+
+</details>
+
 ## Practice
 
 Try these problems on this page. Before coding, write the decision or repetition in plain English.
@@ -237,7 +337,7 @@ Try these problems on this page. Before coding, write the decision or repetition
 4. Print numbers from 1 to 20.
 5. Print all even numbers in a range.
 6. Calculate the sum from 1 to `n`.
-7. Check whether a year is a leap year.
+7. Check whether a year is a leap year. A year is a leap year when it is divisible by 400, or when it is divisible by 4 but not by 100.
 8. Build a menu-driven calculator loop.
 9. Print a multiplication table for a chosen number.
 10. Check whether a number is prime.
@@ -251,7 +351,7 @@ Try these problems on this page. Before coding, write the decision or repetition
 4. Use `range(1, 21)`.
 5. A number is even when its remainder after division by 2 is zero.
 6. Start `total` at zero and add each number.
-7. Use the leap-year rule in the lesson's operator examples.
+7. Translate each part of the written leap-year rule into remainder comparisons, then join them with `and` and `or`.
 8. Put the menu inside a loop and provide an exit choice.
 9. Multiply the chosen number by values from 1 to 10.
 10. Test divisors from 2 up to the number, then improve later.
@@ -262,7 +362,7 @@ Try these problems on this page. Before coding, write the decision or repetition
 <summary>Show solution ideas</summary>
 
 1. Use `if number > 0`, `elif number < 0`, otherwise zero.
-2. `largest = a if a > b else b`.
+2. Start with `largest = a`; use an `if` block to replace it with `b` when `b` is greater.
 3. Start with `largest = a`, then compare `b` and `c`.
 4. `for number in range(1, 21): print(number)`.
 5. Add `if number % 2 == 0` inside the loop.

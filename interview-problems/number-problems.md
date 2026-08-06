@@ -1,3 +1,12 @@
+---
+layout: default
+title: Number Problems
+parent: Interview Problems
+grand_parent: Practice and Projects
+nav_order: 1
+permalink: /practice/interview-problems/numbers/
+---
+
 # Number Problems
 
 1. Reverse an integer without converting it to a string.

@@ -1,3 +1,12 @@
+---
+layout: default
+title: List Problems
+parent: Interview Problems
+grand_parent: Practice and Projects
+nav_order: 3
+permalink: /practice/interview-problems/lists/
+---
+
 # List Problems
 
 1. Find the largest and smallest values without built-ins.

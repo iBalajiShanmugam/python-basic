@@ -1,13 +1,20 @@
+---
+layout: default
+title: Course Map
+nav_order: 2
+permalink: /course-map/
+---
+
 # Course Map
 
-This is the complete learning route. Read each lesson, complete its homework, solve the linked ten-problem set, and take the checkpoint before moving forward.
+This is the complete learning route. Read each lesson, solve its ten on-page problems, complete its homework, and take the checkpoint before moving forward.
 
 | Order | Topic | Main outcome | Practice |
 |---:|---|---|---|
 | 00 | [Setup](00-setup/README.md) | Run Python and create a project | Setup verification |
 | 01 | [Fundamentals](01-python-fundamentals/lesson.md) | Write valid Python programs | On lesson page |
 | 02 | [Variables and data types](02-variables-and-data-types/lesson.md) | Represent information correctly | On lesson page |
-| 03 | [Type conversion](03-type-conversion/lesson.md) | Safely convert user data | On lesson page |
+| 03 | [Type conversion](03-type-conversion/lesson.md) | Convert stored values between suitable types | On lesson page |
 | 04 | [Operators](04-operators/lesson.md) | Build expressions and calculations | On lesson page |
 | 05 | [Input and output](05-input-and-output/lesson.md) | Build interactive programs | On lesson page |
 | 06 | [Control flow](06-control-flow/lesson.md) | Make decisions and repeat work | On lesson page |

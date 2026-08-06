@@ -1,3 +1,12 @@
+---
+layout: default
+title: Dictionary Problems
+parent: Interview Problems
+grand_parent: Practice and Projects
+nav_order: 4
+permalink: /practice/interview-problems/dictionaries/
+---
+
 # Dictionary Problems
 
 1. Count word frequency.

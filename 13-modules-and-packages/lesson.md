@@ -1,8 +1,35 @@
+---
+layout: default
+title: Modules and Packages
+parent: Lessons
+nav_order: 13
+permalink: /lessons/modules-and-packages/
+course_lesson: true
+course_index: "13"
+previous_page: /lessons/exception-handling/
+previous_title: Exception Handling
+next_page: /practice/projects/
+next_title: Guided Projects
+---
+
 # 13 - Modules and Packages
 
 As programs grow, one file becomes difficult to understand. Modules let you split related code into reusable files.
 
+## A simple picture
+
+A module is one labelled drawer of reusable tools. A package is a toolbox containing several related drawers.
+
+```text
+expense_app package
+├── storage.py       -> file tools
+├── calculations.py  -> maths rules
+└── main.py          -> starts the program
+```
+
 ## Importing a standard module
+
+An **import** asks Python to make code from another module available. The **standard library** is the collection of modules installed with Python.
 
 ```python
 import math
@@ -17,6 +44,8 @@ print(pi)
 ```
 
 Avoid importing everything with `from module import *`; it makes names unclear.
+
+> **Important fact:** Python executes a module's top-level statements the first time it is imported in a process. Keep input prompts, file changes, and demonstrations behind functions or the main guard.
 
 ## Creating a custom module
 
@@ -86,6 +115,51 @@ Third-party packages are installed into the active virtual environment. Always a
 - Putting input code at module import time.
 - Creating circular imports between modules.
 - Placing all logic in `main.py` instead of separating responsibilities.
+
+## Bug Hunter
+
+### Bug 1 — file hides a standard module
+
+```text
+project/
+    math.py
+    main.py
+```
+
+Inside `main.py`, `import math` may find the project's `math.py` instead of the standard library module.
+
+### Bug 2 — demonstration runs during import
+
+```python
+# tools.py
+def double(number):
+    return number * 2
+
+print(double(10))
+```
+
+### Bug 3 — circular imports
+
+```text
+students.py imports reports.py
+reports.py imports students.py
+```
+
+<details>
+<summary>Show Bug Hunter fixes</summary>
+
+1. Rename the project file to a specific name such as `math_practice.py`.
+2. Put the demonstration under `if __name__ == "__main__":`.
+3. Move shared values or functions into a third neutral module, or redesign the responsibilities so the modules do not depend on each other in a circle.
+
+</details>
+
+<details>
+<summary>Optional deeper look: what happens during import?</summary>
+
+Python searches for a module, creates a module object, executes its top-level code, and stores the result in `sys.modules`, an internal cache. Later imports in the same process normally reuse that module object instead of executing it again. A partially initialised cached module is one reason circular imports are confusing.
+
+</details>
 
 ## Practice
 

@@ -1,0 +1,16 @@
+{% if page.course_lesson %}
+<nav class="lesson-page-navigation" aria-label="Previous and next lesson">
+  {% if page.previous_page %}
+  <a class="lesson-page-link previous" href="{{ page.previous_page | relative_url }}">
+    <span>← Previous</span>
+    <strong>{{ page.previous_title }}</strong>
+  </a>
+  {% endif %}
+  {% if page.next_page %}
+  <a class="lesson-page-link next" href="{{ page.next_page | relative_url }}">
+    <span>Next →</span>
+    <strong>{{ page.next_title }}</strong>
+  </a>
+  {% endif %}
+</nav>
+{% endif %}

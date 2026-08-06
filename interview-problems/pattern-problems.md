@@ -1,3 +1,12 @@
+---
+layout: default
+title: Pattern Problems
+parent: Interview Problems
+grand_parent: Practice and Projects
+nav_order: 5
+permalink: /practice/interview-problems/patterns/
+---
+
 # Pattern Problems
 
 1. Print a left-aligned triangle of stars.

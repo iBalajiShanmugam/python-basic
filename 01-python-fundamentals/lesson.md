@@ -1,6 +1,24 @@
+---
+layout: default
+title: Python Fundamentals
+parent: Lessons
+nav_order: 1
+permalink: /lessons/fundamentals/
+course_lesson: true
+course_index: "01"
+previous_page: /setup/
+previous_title: Setup
+next_page: /lessons/variables-and-data-types/
+next_title: Variables and Data Types
+---
+
 # 01 - Python Fundamentals
 
 This lesson explains the basic rules Python uses to read and run a program.
+
+## A simple picture
+
+A program is like a recipe. Python reads one instruction, completes it, and then moves to the next instruction. A variable name is like a clear label placed on a box so we can find its value later.
 
 ## Your first program
 
@@ -42,24 +60,16 @@ total = price * quantity
 
 Write comments for decisions or business rules, not for obvious syntax.
 
-## Indentation and blocks
+## Spaces at the beginning of a line
 
-Python uses indentation to show that statements belong to a block:
-
-```python
-temperature = 32
-if temperature > 30:
-    print("Warm day")
-    print("Drink water")
-print("Program complete")
-```
-
-The two indented lines run only when the condition is true. Use four spaces consistently. This is invalid because the body is not indented:
+For now, begin each instruction at the left side of the file:
 
 ```python
-# if True:
-# print("Missing indentation")
+name = "Asha"
+print(name)
 ```
+
+Later, Python will use four spaces at the beginning of a line to group instructions inside conditions, loops, and functions. Those ideas are taught step by step in their own chapters. Do not add beginning spaces randomly because Python treats them as part of the program structure.
 
 ## Identifiers and naming
 
@@ -103,15 +113,7 @@ The underscore in `student_name` is a character inside the name. It is not the s
 
 Keywords are words that already have a special meaning in Python. Common examples are `if`, `else`, `for`, `while`, `def`, `class`, `return`, `import`, `True`, `False`, and `None`.
 
-You can ask Python for the keyword list instead of memorizing it:
-
-```python
-import keyword
-
-print(keyword.kwlist)
-print(keyword.iskeyword("class"))  # True
-print(keyword.iskeyword("student"))  # False
-```
+You do not need to memorize every keyword now. The official list can be explored after you learn modules in Chapter 13.
 
 `True`, `False`, and `None` are also protected Python constants. Do not try to redefine them.
 
@@ -132,13 +134,13 @@ Avoid names that hide the meaning of a built-in function:
 
 ```python
 # Avoid this:
-list = [1, 2, 3]
+print = "display"
 
 # Prefer this:
-numbers = [1, 2, 3]
+display_label = "display"
 ```
 
-If you use `list` as a variable, calling `list("abc")` later will no longer work as expected in that scope.
+If you use `print` as a variable, calling `print("Hello")` later will no longer work because the familiar built-in name was replaced in that part of the program.
 
 ## Reading code from top to bottom
 
@@ -151,6 +153,60 @@ print(final_price)
 
 The final value is `90` because `final_price` is calculated after both earlier assignments. Later assignments replace the value associated with a name.
 
+> **Important fact:** Python normally runs a file from the first executable line to the last. A name must receive a value before that name is used.
+
+## Bug Hunter
+
+### Bug 1 — missing quotes
+
+```python
+message = Hello, Python!
+print(message)
+```
+
+Text must be surrounded by matching quotation marks.
+
+### Bug 2 — invalid name
+
+```python
+2nd_score = 90
+print(2nd_score)
+```
+
+A name cannot begin with a digit.
+
+### Bug 3 — different capital letters
+
+```python
+student_name = "Maya"
+print(Student_name)
+```
+
+Python treats `student_name` and `Student_name` as different names.
+
+<details>
+<summary>Show Bug Hunter fixes</summary>
+
+```python
+message = "Hello, Python!"
+print(message)
+
+second_score = 90
+print(second_score)
+
+student_name = "Maya"
+print(student_name)
+```
+
+</details>
+
+<details>
+<summary>Optional deeper look: what does assignment do?</summary>
+
+Python creates values as objects. The assignment `score = 90` connects the name `score` to the integer object `90`. Programmers call this **binding a name to an object**. At this stage, the simple mental model “the variable stores the value” is enough.
+
+</details>
+
 ## Common mistakes
 
 - Mixing tabs and spaces.
@@ -162,7 +218,7 @@ The final value is `90` because `final_price` is calculated after both earlier a
 
 ## Guided practice
 
-Change the first program to print your name, city, and a learning goal. Then intentionally remove indentation and read the error message before fixing it.
+Change the first program to print your name, city, and one thing you want to build. Then intentionally remove one closing quote, read the error message, and put the quote back.
 
 ## Practice
 
@@ -172,7 +228,7 @@ Try these problems on this page. Create a separate file such as `fundamentals_pr
 
 1. Print a three-line personal profile.
 2. Store a product name and price, then print them with labels.
-3. Fix a program that has two indentation errors.
+3. Fix a program that has two missing quotation marks.
 4. Decide which of these names are valid: `student_name`, `2score`, `first-name`, `class`, `_total`.
 5. Print a receipt header using three separate `print()` calls.
 6. Create variables for a library book and display one sentence about it.
@@ -219,7 +275,7 @@ Create a `profile.py` program that prints a formatted profile using at least fiv
 
 ## Checkpoint
 
-Explain the difference between a statement and an expression, identify three valid variable names, and fix an indentation error without using auto-formatting.
+Explain the difference between a statement and an expression, identify three valid variable names, and fix a missing quotation mark by reading Python's error message.
 
 ---
 

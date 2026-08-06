@@ -1,3 +1,12 @@
+---
+layout: default
+title: Guided Projects
+parent: Practice and Projects
+nav_order: 2
+has_children: true
+permalink: /practice/projects/
+---
+
 # Projects
 
 Projects are where separate concepts become one working program. Read the requirements, design the data, write pseudocode, and build incrementally.

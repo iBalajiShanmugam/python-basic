@@ -1,6 +1,24 @@
+---
+layout: default
+title: Input and Output
+parent: Lessons
+nav_order: 5
+permalink: /lessons/input-and-output/
+course_lesson: true
+course_index: "05"
+previous_page: /lessons/operators/
+previous_title: Operators
+next_page: /lessons/control-flow/
+next_title: Control Flow
+---
+
 # 05 - Input and Output
 
 Programs become useful when they receive information and communicate results clearly.
+
+## A simple picture
+
+Input is the program's ear: it listens to what a person types. Output is the program's voice: it displays a clear answer. A friendly program asks one clear question at a time.
 
 ## Reading input
 
@@ -13,12 +31,46 @@ print(f"Welcome, {name}!")
 
 `.strip()` removes accidental spaces at the beginning and end. It does not remove spaces between words.
 
+> **Important fact:** `input()` always returns a string (`str`). This is true even when the person types digits.
+
+Try this program and enter `25`:
+
+```python
+age_text = input("Enter your age: ")
+
+print(age_text)
+print(type(age_text))
+```
+
+Output:
+
+```text
+25
+<class 'str'>
+```
+
+The value looks like a number to us, but Python received keyboard characters. Convert it only when the program needs number operations:
+
+```python
+age_text = input("Enter your age: ")
+age = int(age_text)
+
+print(age)
+print(type(age))
+```
+
+```text
+keyboard -> input() -> str -> int() or float() when needed
+```
+
 Convert numeric input explicitly:
 
 ```python
 quantity = int(input("Quantity: "))
 price = float(input("Price: "))
 ```
+
+The inner `input()` runs first. Its string result is passed to `int()` or `float()`.
 
 ## Displaying output
 
@@ -96,36 +148,6 @@ Total: 91.00
 
 Then identify the type of every input and the formula for the result.
 
-## Command-line arguments (optional foundation)
-
-Input normally arrives after the program starts. Command-line arguments are values written in the command used to start the program:
-
-```bash
-python greet.py Ravi
-```
-
-Python makes these values available through `sys.argv`:
-
-```python
-import sys
-
-print(sys.argv)
-```
-
-The first item, `sys.argv[0]`, is the script name. Values typed after it are strings:
-
-```python
-import sys
-
-if len(sys.argv) < 2:
-    print("Please provide a name")
-else:
-    name = sys.argv[1]
-    print(f"Hello, {name}!")
-```
-
-Convert an argument when it represents a number: `quantity = int(sys.argv[1])`. This is optional for the Basic projects; interactive `input()` is easier to start with.
-
 ## Real-world example
 
 ```python
@@ -149,6 +171,67 @@ This is clear because each value has a label and the money value has consistent 
 - Printing a calculation expression as text instead of evaluating it.
 - Using many commas when one formatted f-string would be clearer.
 - Mixing prompts, calculations, and output so the program is difficult to change.
+
+## Bug Hunter
+
+### Bug 1 — the number is still text
+
+```python
+age = input("Age: ")
+next_age = age + 1
+print(next_age)
+```
+
+Clue: convert the input before adding a number.
+
+### Bug 2 — conversion happens too late
+
+```python
+first = input("First number: ")
+second = input("Second number: ")
+total = first + second
+print(int(total))
+```
+
+If the inputs are `2` and `3`, this prints `23`. Convert each input before addition.
+
+### Bug 3 — forgotten f-string marker
+
+```python
+name = input("Name: ")
+print("Hello, {name}!")
+```
+
+Clue: an f-string begins with `f` before the opening quote.
+
+<details>
+<summary>Show Bug Hunter fixes</summary>
+
+```python
+# Bug 1
+age = int(input("Age: "))
+next_age = age + 1
+print(next_age)
+
+# Bug 2
+first = int(input("First number: "))
+second = int(input("Second number: "))
+total = first + second
+print(total)
+
+# Bug 3
+name = input("Name: ")
+print(f"Hello, {name}!")
+```
+
+</details>
+
+<details>
+<summary>Optional deeper look: where do input and output go?</summary>
+
+The terminal provides a text input stream called **standard input**. `input()` reads one line from it. `print()` writes text to **standard output**. A stream is simply a flow of data that a program can read or write. Keeping conversion separate makes the program easier to test later.
+
+</details>
 
 ## Practice
 

@@ -1,0 +1,16 @@
+{% if page.course_lesson %}
+<div class="lesson-status" data-course-lesson="{{ page.url | relative_url }}">
+  <div>
+    <span class="lesson-status-label">Course progress</span>
+    {% if page.course_index == "00" %}
+    <strong>Setup · start here</strong>
+    {% else %}
+    <strong>Lesson {{ page.course_index }} of 13</strong>
+    {% endif %}
+  </div>
+  <button class="lesson-complete-button" type="button" aria-pressed="false">
+    <span aria-hidden="true">✓</span>
+    <span class="lesson-complete-label">Mark complete</span>
+  </button>
+</div>
+{% endif %}

@@ -1,3 +1,12 @@
+---
+layout: default
+title: Collections Checkpoint
+parent: Quizzes and Assessments
+grand_parent: Practice and Projects
+nav_order: 2
+permalink: /practice/quizzes/collections/
+---
+
 # Collections Checkpoint
 
 1. Explain list mutability.

@@ -13,8 +13,10 @@ This course is written from scratch for Python 3, with simple explanations, prac
 1. Read [Learning Guide](LEARNING_GUIDE.md).
 2. Complete [Setup](00-setup/README.md).
 3. Follow the lessons in order using [Course Map](COURSE_MAP.md).
-4. Solve the linked problem set after every lesson.
+4. Solve the ten practice problems on each lesson page.
 5. Check your work only after making a genuine attempt.
+
+When a programming word is unfamiliar, open the [Beginner Glossary](glossary/README.md). Every lesson also defines its new words before using them.
 
 ## Complete course path
 
@@ -48,7 +50,7 @@ That is normal. Use this order:
 2. Change one small value and run it again.
 3. Read the error message and note its line number.
 4. Open the lesson's **Common mistakes** section.
-5. Try one problem from the linked practice set.
+5. Try one problem from the lesson's Practice section.
 6. Open one hint only after making your own attempt.
 7. Return to the [Learning Guide](LEARNING_GUIDE.md) and use the problem-solving worksheet.
 
@@ -62,7 +64,9 @@ That is normal. Use this order:
 
 ## Course principles
 
-- Short explanations, followed by executable examples.
+- Small explanations, line-by-line examples, and expected output.
+- Important Python behavior stated clearly, including surprising rules.
+- Beginner Bug Hunter exercises that make debugging normal and enjoyable.
 - At least ten problems for every major topic.
 - Hints and solutions kept separate from the problem statement.
 - Regular debugging, output prediction, and interview-style practice.

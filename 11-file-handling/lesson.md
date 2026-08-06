@@ -1,6 +1,28 @@
+---
+layout: default
+title: File Handling
+parent: Lessons
+nav_order: 11
+permalink: /lessons/file-handling/
+course_lesson: true
+course_index: "11"
+previous_page: /lessons/functions/
+previous_title: Functions
+next_page: /lessons/exception-handling/
+next_title: Exception Handling
+---
+
 # 11 - File Handling
 
 Variables disappear when a program ends. Files let a program store information for the next run.
+
+## A simple picture
+
+A variable is like writing on a classroom whiteboard: it is cleared when the program finishes. A file is like writing in a notebook that can be opened again tomorrow.
+
+```text
+program -> write -> file on storage -> read during a later run
+```
 
 ## Opening a file
 
@@ -20,6 +42,8 @@ with open("notes.txt", "w", encoding="utf-8") as file:
 ```
 
 The file closes automatically when the block ends, even when an error occurs.
+
+> **Important fact:** prefer `with open(...)` because it closes the file automatically. A file that remains open may keep operating-system resources busy and may not finish writing buffered data when expected.
 
 ## File modes
 
@@ -52,10 +76,14 @@ with open("notes.txt", encoding="utf-8") as file:
 
 `open("notes.txt")` looks relative to the program's current working directory, not necessarily the folder containing the `.py` file. Print the current directory while debugging:
 
+The **current working directory** is the folder from which Python was started. A **path** tells Python where a file or folder is located.
+
 ```python
 from pathlib import Path
 print(Path.cwd())
 ```
+
+`from pathlib import Path` borrows the `Path` tool from Python's standard library. Imports receive a complete explanation in Chapter 13; for now, type the line exactly as shown.
 
 `pathlib.Path` is a modern way to work with paths:
 
@@ -70,6 +98,8 @@ path.write_text("Hello\n", encoding="utf-8")
 
 CSV stores rows and columns. Use the `csv` module instead of manually splitting commas when data may contain commas:
 
+CSV means **comma-separated values**. A CSV-aware tool understands quoted values that themselves contain commas.
+
 ```python
 import csv
 
@@ -81,6 +111,8 @@ with open("students.csv", newline="", encoding="utf-8") as file:
 ## JSON basics
 
 JSON represents dictionaries, lists, strings, numbers, booleans, and null values:
+
+JSON means **JavaScript Object Notation**. It is a text format shared by many programming languages. JSON `null` becomes Python `None` when loaded.
 
 ```python
 import json
@@ -114,6 +146,60 @@ print(f"Total: {total:.2f}")
 - Assuming a relative path starts beside the script.
 - Forgetting to handle a missing file.
 - Storing comma-containing data by manually splitting CSV lines.
+
+## Bug Hunter
+
+### Bug 1 — write mode erased the file
+
+```python
+with open("notes.txt", "w", encoding="utf-8") as file:
+    file.write("One more note\n")
+```
+
+The learner wanted to keep old notes and add a new one.
+
+### Bug 2 — reading after closing
+
+```python
+file = open("notes.txt", encoding="utf-8")
+file.close()
+content = file.read()
+```
+
+### Bug 3 — wrong relative folder
+
+```python
+with open("data/marks.txt", encoding="utf-8") as file:
+    print(file.read())
+```
+
+The code fails when the `data` folder does not exist in the current working directory.
+
+<details>
+<summary>Show Bug Hunter fixes</summary>
+
+```python
+# Bug 1: append instead of replacing.
+with open("notes.txt", "a", encoding="utf-8") as file:
+    file.write("One more note\n")
+
+# Bug 2: read inside a with block.
+with open("notes.txt", encoding="utf-8") as file:
+    content = file.read()
+
+# Bug 3: confirm the current folder and create the expected data folder/file.
+from pathlib import Path
+print(Path.cwd())
+```
+
+</details>
+
+<details>
+<summary>Optional deeper look: what does a Python file wrap?</summary>
+
+The operating system gives Python a small identifier for an open file, called a **file descriptor**. Python adds buffering and, for text files, encoding and decoding. Buffering groups many small reads or writes for efficiency. Closing or leaving a `with` block releases these layers safely.
+
+</details>
 
 ## Practice
 

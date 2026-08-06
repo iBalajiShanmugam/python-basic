@@ -1,6 +1,30 @@
+---
+layout: default
+title: Functions
+parent: Lessons
+nav_order: 10
+permalink: /lessons/functions/
+course_lesson: true
+course_index: "10"
+previous_page: /lessons/sets-and-dictionaries/
+previous_title: Sets and Dictionaries
+next_page: /lessons/file-handling/
+next_title: File Handling
+---
+
 # 10 - Functions
 
 Functions let you name and reuse a piece of logic.
+
+## A simple picture
+
+A function is like a small machine with a name:
+
+```text
+arguments -> function machine -> returned result
+```
+
+A machine may receive values through **parameters**, perform one clear job, and send a result back with `return`.
 
 ## Defining and calling
 
@@ -82,6 +106,8 @@ total = add(2, 3)
 
 Use `return` when another part of the program needs to use the result. A function without `return` returns `None`.
 
+> **Important fact:** `print()` displays something for a person. `return` sends a value back to the code that called the function. Printing a value does not automatically make it the function's returned result.
+
 Python can return more than one value. It actually packs the values into a tuple:
 
 ```python
@@ -128,6 +154,9 @@ print(introduce("Ravi", city="Pune"))
 
 Here `name` is required and `city` has a default value. A default is used only when the caller does not provide that argument.
 
+<details>
+<summary>Optional extension: variable-length arguments with <code>*args</code> and <code>**kwargs</code></summary>
+
 ## Variable-length arguments: `*args`
 
 Sometimes a function should accept any number of positional arguments. Put `*` before the parameter name:
@@ -170,6 +199,8 @@ report("Math", 80, 90, 85, student="Ravi", term="First")
 
 Learn the idea, but do not use these tools everywhere. Prefer clear named parameters when the number of inputs is known.
 
+</details>
+
 ## Scope
 
 Variables created inside a function are local:
@@ -190,14 +221,8 @@ def area_of_circle(radius):
     return 3.14159 * radius ** 2
 ```
 
-## Flexible arguments
-
-`*args` collects extra positional arguments as a tuple; `**kwargs` collects extra keyword arguments as a dictionary. Learn them after ordinary parameters are comfortable:
-
-```python
-def total(*numbers):
-    return sum(numbers)
-```
+<details>
+<summary>Optional extension: recursion</summary>
 
 ## Recursion introduction
 
@@ -211,6 +236,8 @@ def factorial(number):
 ```
 
 For many beginner problems, a loop is easier to read than recursion.
+
+</details>
 
 ## Real-world design
 
@@ -236,6 +263,68 @@ Each function has one responsibility, so changing input or display does not requ
 - Confusing `*args` with a normal list parameter.
 - Forgetting that `**kwargs` collects named values in a dictionary.
 - Using `*args` or `**kwargs` when simple named parameters would be clearer.
+
+## Bug Hunter
+
+### Bug 1 — function never called
+
+```python
+def greet(name):
+    return f"Hello, {name}!"
+```
+
+The function is defined, but nothing calls it or displays its result.
+
+### Bug 2 — printing instead of returning
+
+```python
+def add(first, second):
+    print(first + second)
+
+total = add(2, 3)
+print(total)
+```
+
+The function displays `5`, but its returned value is `None`.
+
+### Bug 3 — shared mutable default
+
+```python
+def add_task(task, tasks=[]):
+    tasks.append(task)
+    return tasks
+```
+
+The default list is created once, so later calls reuse it.
+
+<details>
+<summary>Show Bug Hunter fixes</summary>
+
+```python
+# Bug 1
+message = greet("Maya")
+print(message)
+
+# Bug 2
+def add(first, second):
+    return first + second
+
+# Bug 3
+def add_task(task, tasks=None):
+    if tasks is None:
+        tasks = []
+    tasks.append(task)
+    return tasks
+```
+
+</details>
+
+<details>
+<summary>Optional deeper look: what happens during a function call?</summary>
+
+Python first matches arguments to parameters. It then creates a **call frame**, a workspace holding the function's local names and current instruction. When the function returns, that frame finishes and the returned object goes back to the caller. Default values are created once when Python executes the `def` statement, which explains the shared-list bug above.
+
+</details>
 
 ## Practice
 

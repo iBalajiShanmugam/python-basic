@@ -1,3 +1,12 @@
+---
+layout: default
+title: Mixed Basic Problems
+parent: Interview Problems
+grand_parent: Practice and Projects
+nav_order: 6
+permalink: /practice/interview-problems/mixed/
+---
+
 # Mixed Basic Problems
 
 1. Build a number guessing game.

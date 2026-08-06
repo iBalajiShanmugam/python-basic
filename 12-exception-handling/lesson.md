@@ -1,6 +1,28 @@
+---
+layout: default
+title: Exception Handling
+parent: Lessons
+nav_order: 12
+permalink: /lessons/exception-handling/
+course_lesson: true
+course_index: "12"
+previous_page: /lessons/file-handling/
+previous_title: File Handling
+next_page: /lessons/modules-and-packages/
+next_title: Modules and Packages
+---
+
 # 12 - Exception Handling
 
 An exception is a runtime event that stops normal execution unless the program handles it.
+
+## A simple picture
+
+An exception is like an emergency card passed from one helper to another. Normal work pauses. A helper that knows this exact problem may handle it and continue safely; otherwise the card keeps moving outward.
+
+```text
+risky operation -> exception -> matching except block -> recovery
+```
 
 ## Types of problems
 
@@ -28,6 +50,8 @@ else:
 ```
 
 Put only the risky operation in the `try` block. Catch the specific exception you expect.
+
+> **Important fact:** `try` does not mean “ignore every problem.” It marks an operation that may fail in an expected way. Catch only exceptions you understand and can handle correctly.
 
 ## Multiple exceptions
 
@@ -95,6 +119,62 @@ The loop repeats only for the expected invalid-input case.
 - Showing a technical traceback to a beginner user when recovery is possible.
 - Silently ignoring an exception with `pass`.
 - Using exceptions to hide a logic error.
+
+## Bug Hunter
+
+### Bug 1 — wrong exception type
+
+```python
+try:
+    age = int("ten")
+except ZeroDivisionError:
+    print("Please enter a whole number")
+```
+
+### Bug 2 — risky operation outside `try`
+
+```python
+number = int(input("Number: "))
+try:
+    print(number)
+except ValueError:
+    print("Please enter a whole number")
+```
+
+### Bug 3 — error silently hidden
+
+```python
+try:
+    total = 100 / 0
+except Exception:
+    pass
+```
+
+<details>
+<summary>Show Bug Hunter fixes</summary>
+
+```python
+# Bugs 1 and 2
+try:
+    age = int(input("Age: "))
+except ValueError:
+    print("Please enter a whole number")
+
+# Bug 3
+try:
+    total = 100 / 0
+except ZeroDivisionError:
+    print("The denominator cannot be zero")
+```
+
+</details>
+
+<details>
+<summary>Optional deeper look: how does an exception find a handler?</summary>
+
+When an exception is raised, Python stops the current normal path and looks for a matching handler. If the current function has none, Python finishes that call frame and checks its caller. This process is called **stack unwinding**. `finally` blocks and context-manager cleanup still run during unwinding.
+
+</details>
 
 ## Practice
 

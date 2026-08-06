@@ -1,0 +1,52 @@
+title: Python Basic
+description: A clear, self-paced Python course for first-time programmers and school students.
+theme: just-the-docs
+
+url: https://ibalajishanmugam.github.io
+baseurl: /python-basic
+repository: iBalajiShanmugam/python-basic
+
+color_scheme: python-course
+
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 12
+  tokenizer_separator: /[\s/\-]+/
+  rel_url: true
+  button: true
+  focus_shortcut_key: k
+
+nav_enabled: true
+heading_anchors: true
+back_to_top: true
+back_to_top_text: Back to top
+enable_copy_code_button: true
+
+aux_links:
+  GitHub repository: https://github.com/iBalajiShanmugam/python-basic
+aux_links_new_tab: true
+
+footer_content: "Python Basic · Learn slowly, practise often, build confidently."
+last_edit_timestamp: false
+
+gh_edit_link: true
+gh_edit_link_text: Edit this page on GitHub
+gh_edit_repository: https://github.com/iBalajiShanmugam/python-basic
+gh_edit_branch: main
+gh_edit_view_mode: edit
+
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+exclude:
+  - Gemfile.lock
+  - README.md
+  - node_modules/
+  - vendor/
