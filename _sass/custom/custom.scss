@@ -10,6 +10,7 @@
   --course-purple: #6941c6;
   --course-purple-soft: #f4f3ff;
   --course-line: #e4e7ec;
+  --course-page-gutter: clamp(1.5rem, 3vw, 3.5rem);
 }
 
 body {
@@ -19,15 +20,20 @@ body {
 }
 
 .site-header {
-  min-height: 76px;
+  height: 84px;
+  min-height: 84px;
   border-bottom-color: var(--course-line);
+  box-sizing: border-box;
 }
 
 .site-title {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 76px;
+  height: 84px;
+  min-height: 84px;
+  padding-top: 0;
+  padding-bottom: 0;
   padding-left: 54px;
   color: #101828;
   font-size: 1.05rem !important;
@@ -127,7 +133,7 @@ body {
 
 .main-content div.highlight pre.highlight {
   margin: 0;
-  padding: 1rem 1.15rem;
+  padding: 1rem 6.25rem 1rem 1.15rem;
   overflow: visible;
   background: transparent;
   border: 0;
@@ -145,6 +151,60 @@ body {
   font-size: 0.9rem;
   line-height: 1.55;
   white-space: pre;
+}
+
+.main-content div.highlighter-rouge {
+  position: relative;
+  margin: 1.1rem 0;
+  overflow: visible;
+  background: transparent;
+}
+
+.main-content div.highlighter-rouge div.highlight {
+  margin: 0;
+}
+
+.main-content div.highlighter-rouge > button {
+  z-index: 3;
+  top: 0.65rem;
+  right: 0.65rem;
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  width: auto;
+  min-width: 4.4rem;
+  padding: 0.42rem 0.6rem;
+  color: #e2e8f0;
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 7px;
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.main-content div.highlighter-rouge > button:hover {
+  color: #ffffff;
+  background: #334155;
+  cursor: pointer;
+}
+
+.main-content div.highlighter-rouge > button:focus {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+.main-content div.highlighter-rouge > button svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.copy-button-label {
+  color: inherit;
+  font-size: 0.72rem;
+  font-weight: 750;
+  line-height: 1;
 }
 
 // Rouge syntax colors chosen for the dark code surface.
@@ -177,6 +237,18 @@ body {
 .main-content .highlight .mi,
 .main-content .highlight .mf {
   color: #ffa657;
+}
+
+.main-content .highlight .n {
+  color: #d2a8ff;
+}
+
+.main-content .highlight .p {
+  color: #c9d1d9;
+}
+
+.main-content .highlight .sh {
+  color: #a5d6ff;
 }
 
 .main-content blockquote {
@@ -389,8 +461,9 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  min-height: 45px;
-  padding: 7px 0;
+  min-height: 84px;
+  padding: 12px 0 12px var(--course-page-gutter);
+  box-sizing: border-box;
 }
 
 .lesson-status > div {
@@ -524,6 +597,40 @@ body {
   width: 0;
   height: 100%;
   background: linear-gradient(90deg, var(--course-blue), var(--course-yellow));
+}
+
+@media (min-width: 50rem) {
+  .side-bar {
+    width: 17rem;
+    min-width: 17rem;
+    align-items: stretch;
+  }
+
+  .side-bar + .main {
+    max-width: none;
+    margin-right: 0;
+    margin-left: 17rem;
+  }
+
+  .site-nav,
+  .site-header,
+  .site-footer {
+    width: 100%;
+  }
+
+  .main-header {
+    height: 84px;
+    min-height: 84px;
+  }
+
+  .main-content-wrap {
+    padding-right: var(--course-page-gutter);
+    padding-left: var(--course-page-gutter);
+  }
+
+  .main-content {
+    max-width: none;
+  }
 }
 
 @media (max-width: 800px) {

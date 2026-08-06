@@ -100,9 +100,28 @@
     if (navigation && lesson) lesson.append(navigation);
   }
 
+  function enhanceCopyButtons() {
+    document.querySelectorAll("div.highlighter-rouge > button").forEach((button) => {
+      if (button.querySelector(".copy-button-label")) return;
+
+      const label = document.createElement("span");
+      label.className = "copy-button-label";
+      label.textContent = "Copy";
+      button.append(label);
+
+      button.addEventListener("click", () => {
+        label.textContent = "Copied";
+        window.setTimeout(() => {
+          label.textContent = "Copy";
+        }, 4000);
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     classifyDetails();
     placeLessonNavigation();
+    window.requestAnimationFrame(enhanceCopyButtons);
     setupCompletion();
     setupReadingProgress();
     updateProgress();
