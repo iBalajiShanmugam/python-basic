@@ -145,7 +145,7 @@ students.py imports reports.py
 reports.py imports students.py
 ```
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 1. Rename the project file to a specific name such as `math_practice.py`.
@@ -154,7 +154,7 @@ reports.py imports students.py
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: what happens during import?</summary>
 
 Python searches for a module, creates a module object, executes its top-level code, and stores the result in `sys.modules`, an internal cache. Later imports in the same process normally reuse that module object instead of executing it again. A partially initialised cached module is one reason circular imports are confusing.
@@ -178,7 +178,7 @@ Try these problems on this page. Draw the files first and write the responsibili
 9. Identify and fix a circular-import design.
 10. Refactor the expense tracker into a small package with a main entry point.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Put the function in `greetings.py`.
@@ -194,7 +194,7 @@ Try these problems on this page. Draw the files first and write the responsibili
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. Define `greet(name)` in `greetings.py` and import it.
@@ -217,7 +217,3 @@ Refactor a previous project into at least three modules and document what respon
 ## Checkpoint
 
 Split a calculator into a module containing calculation functions and a separate main program containing input and display logic. Explain what the main guard does.
-
----
-
-Previous: [Exception Handling](../12-exception-handling/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Continue to [Projects](../projects/README.md) or [Interview Problems](../interview-problems/README.md)

@@ -170,7 +170,7 @@ name.strip()
 print(name)
 ```
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -186,7 +186,7 @@ name = name.strip()
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: text and memory</summary>
 
 Python strings store Unicode text and are immutable. Unicode allows one program to represent many writing systems and symbols. Because a string cannot change in place, operations such as slicing, replacing, or joining produce a new string object. Repeatedly joining thousands of pieces with `+` can be slower than collecting them and using `.join()` once.
@@ -210,7 +210,7 @@ Try these problems on this page. Decide first whether spaces and letter case sho
 9. **Challenge:** check whether two words are anagrams after learning `sorted()` and lists in Chapter 08.
 10. Validate a username using length and allowed characters.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Remove spaces or count only characters that are not spaces.
@@ -226,7 +226,7 @@ Try these problems on this page. Decide first whether spaces and letter case sho
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. `len(sentence.replace(" ", ""))` handles ordinary spaces.
@@ -249,7 +249,3 @@ Build a text analyzer that reports character count, word count, vowel count, and
 ## Checkpoint
 
 Write a program that normalizes a sentence by removing outer spaces, converting it to lowercase, and counting its non-space characters.
-
----
-
-Previous: [Control Flow](../06-control-flow/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Lists and Tuples](../08-lists-and-tuples/lesson.md)

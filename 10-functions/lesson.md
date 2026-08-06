@@ -154,7 +154,7 @@ print(introduce("Ravi", city="Pune"))
 
 Here `name` is required and `city` has a default value. A default is used only when the caller does not provide that argument.
 
-<details>
+<details markdown="1">
 <summary>Optional extension: variable-length arguments with <code>*args</code> and <code>**kwargs</code></summary>
 
 ## Variable-length arguments: `*args`
@@ -221,7 +221,7 @@ def area_of_circle(radius):
     return 3.14159 * radius ** 2
 ```
 
-<details>
+<details markdown="1">
 <summary>Optional extension: recursion</summary>
 
 ## Recursion introduction
@@ -297,7 +297,7 @@ def add_task(task, tasks=[]):
 
 The default list is created once, so later calls reuse it.
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -319,7 +319,7 @@ def add_task(task, tasks=None):
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: what happens during a function call?</summary>
 
 Python first matches arguments to parameters. It then creates a **call frame**, a workspace holding the function's local names and current instruction. When the function returns, that frame finishes and the returned object goes back to the caller. Default values are created once when Python executes the `def` statement, which explains the shared-list bug above.
@@ -343,7 +343,7 @@ Try these problems on this page. Write the function name, parameters, return val
 9. Write a recursive factorial function and test edge cases.
 10. Design a reusable student-result module with at least four functions.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Return the number multiplied by itself.
@@ -359,7 +359,7 @@ Try these problems on this page. Write the function name, parameters, return val
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. `def square(number): return number * number`.
@@ -382,7 +382,3 @@ Refactor one earlier project so that input, validation, calculation, and display
 ## Checkpoint
 
 Break a bill calculator into at least three functions and explain the inputs and outputs of each function.
-
----
-
-Previous: [Sets and Dictionaries](../09-sets-and-dictionaries/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [File Handling](../11-file-handling/lesson.md)

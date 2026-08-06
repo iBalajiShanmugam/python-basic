@@ -243,7 +243,3 @@ Read [Terminal Basics](terminal-basics.md). You only need a few commands to move
 - [ ] I either created `.venv` or understand that I can return to that optional step.
 
 If a checkpoint fails, open [Setup Troubleshooting](troubleshooting.md).
-
----
-
-[Back to course home](../README.md) · [Start Chapter 1: Python Fundamentals](../01-python-fundamentals/lesson.md)

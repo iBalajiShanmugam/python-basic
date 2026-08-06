@@ -234,7 +234,7 @@ sorted_scores = scores.sort()
 print(sorted_scores)
 ```
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -254,7 +254,7 @@ sorted_scores = sorted(scores)
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: how is a list stored?</summary>
 
 A CPython list keeps an ordered array of references to objects. It normally reserves a little extra room so repeated `append()` operations do not need to rebuild the storage every time. A shallow copy creates a new outer list but still refers to the same nested objects.
@@ -278,7 +278,7 @@ Try these problems on this page. Use a small list by hand before writing the pro
 9. Unpack a tuple representing a date.
 10. Build a marks analyzer that displays total, average, highest, and lowest values.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Start at zero and add each item.
@@ -294,7 +294,7 @@ Try these problems on this page. Use a small list by hand before writing the pro
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. `total = 0` and add every item.
@@ -317,7 +317,3 @@ Build a weekly sales analyzer that accepts seven values and reports total sales,
 ## Checkpoint
 
 Given a list of marks, calculate total, average, highest, and lowest values. Explain why a list is more suitable than a tuple if marks can be corrected.
-
----
-
-Previous: [Strings](../07-strings/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Sets and Dictionaries](../09-sets-and-dictionaries/lesson.md)

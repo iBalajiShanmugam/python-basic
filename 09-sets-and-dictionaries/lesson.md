@@ -220,7 +220,7 @@ print(scores)
 
 A dictionary keeps one value for each unique key. The later assignment replaces the earlier value.
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -237,7 +237,7 @@ scores = {"S001": 80, "S002": 95}
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: why are lookups fast?</summary>
 
 Sets and dictionaries use a structure called a **hash table**. Python calculates a hash from a key to find a likely storage position, then checks equality. Lookup is usually very fast—average constant time—but keys must have stable hash behavior. Immutable values such as strings, numbers, and suitable tuples can be keys; a mutable list cannot.
@@ -261,7 +261,7 @@ Try these problems on this page. Before choosing a collection, decide whether yo
 9. Group names by their first letter.
 10. Build a shopping cart dictionary and calculate its total.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Convert the list to a set.
@@ -277,7 +277,7 @@ Try these problems on this page. Before choosing a collection, decide whether yo
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. `unique_values = set(values)`.
@@ -300,7 +300,3 @@ Build a small inventory dictionary with product quantities. Support adding stock
 ## Checkpoint
 
 Create a dictionary for three products and their prices. Calculate the total price of a selected shopping list and explain why a dictionary is useful.
-
----
-
-Previous: [Lists and Tuples](../08-lists-and-tuples/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Functions](../10-functions/lesson.md)

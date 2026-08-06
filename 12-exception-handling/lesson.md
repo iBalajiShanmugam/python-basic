@@ -150,7 +150,7 @@ except Exception:
     pass
 ```
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -169,7 +169,7 @@ except ZeroDivisionError:
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: how does an exception find a handler?</summary>
 
 When an exception is raised, Python stops the current normal path and looks for a matching handler. If the current function has none, Python finishes that call frame and checks its caller. This process is called **stack unwinding**. `finally` blocks and context-manager cleanup still run during unwinding.
@@ -193,7 +193,7 @@ Try these problems on this page. For each one, name the operation that can fail 
 9. Use `else` and `finally` correctly in a file-reading program.
 10. Build a robust command-line expense entry program.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Catch `ValueError` around `int()`.
@@ -209,7 +209,7 @@ Try these problems on this page. For each one, name the operation that can fail 
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. Put `int(text)` inside `try` and handle `ValueError`.
@@ -232,7 +232,3 @@ Make the expense tracker reject invalid amounts, negative values, missing descri
 ## Checkpoint
 
 Make a calculator that continues running after invalid input and handles division by zero. Explain which exception each handler catches.
-
----
-
-Previous: [File Handling](../11-file-handling/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Modules and Packages](../13-modules-and-packages/lesson.md)

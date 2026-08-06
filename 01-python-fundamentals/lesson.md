@@ -36,15 +36,15 @@ Run it with `python hello.py`. Python executes the assignment first and then cal
 A statement is an instruction Python can execute:
 
 ```python
-name = "Asha"       # assignment statement
-print(name)         # function-call statement
+name = "Asha"  # assignment statement
+print(name)    # function-call statement
 ```
 
 An expression produces a value:
 
 ```python
-2 + 3               # value: 5
-"Py" + "thon"      # value: "Python"
+2 + 3          # value: 5
+"Py" + "thon"  # value: "Python"
 ```
 
 Expressions can be part of statements: `print(2 + 3)`.
@@ -184,7 +184,7 @@ print(Student_name)
 
 Python treats `student_name` and `Student_name` as different names.
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -200,7 +200,7 @@ print(student_name)
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: what does assignment do?</summary>
 
 Python creates values as objects. The assignment `score = 90` connects the name `score` to the integer object `90`. Programmers call this **binding a name to an object**. At this stage, the simple mental model “the variable stores the value” is enough.
@@ -237,7 +237,7 @@ Try these problems on this page. Create a separate file such as `fundamentals_pr
 9. Print the first five multiples of a number.
 10. Explain why `class`, `2name`, and `first name` cannot be identifiers.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Use one `print()` call for each line.
@@ -253,7 +253,7 @@ Try these problems on this page. Create a separate file such as `fundamentals_pr
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. Store the profile fields and print each with a label.
@@ -276,7 +276,3 @@ Create a `profile.py` program that prints a formatted profile using at least fiv
 ## Checkpoint
 
 Explain the difference between a statement and an expression, identify three valid variable names, and fix a missing quotation mark by reading Python's error message.
-
----
-
-[Course home](../README.md) · [Course map](../COURSE_MAP.md) · Next: [Variables and Data Types](../02-variables-and-data-types/lesson.md)

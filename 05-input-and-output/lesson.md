@@ -204,7 +204,7 @@ print("Hello, {name}!")
 
 Clue: an f-string begins with `f` before the opening quote.
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -226,7 +226,7 @@ print(f"Hello, {name}!")
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: where do input and output go?</summary>
 
 The terminal provides a text input stream called **standard input**. `input()` reads one line from it. `print()` writes text to **standard output**. A stream is simply a flow of data that a program can read or write. Keeping conversion separate makes the program easier to test later.
@@ -250,7 +250,7 @@ Try these problems on this page. First write the sample conversation, then write
 9. Create an invoice with aligned labels.
 10. Design the input and output for a menu item order before writing code.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Store `input()` in a variable and use an f-string.
@@ -266,7 +266,7 @@ Try these problems on this page. First write the sample conversation, then write
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. `name = input("Name: ")` followed by `print(f"Hello, {name}!")`.
@@ -289,7 +289,3 @@ Create a formatted travel booking confirmation that accepts a passenger name, de
 ## Checkpoint
 
 Build a program that reads a product name, quantity, and price and prints a formatted receipt line.
-
----
-
-Previous: [Operators](../04-operators/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Control Flow](../06-control-flow/lesson.md)

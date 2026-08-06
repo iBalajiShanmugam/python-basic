@@ -94,8 +94,15 @@
     update();
   }
 
+  function placeLessonNavigation() {
+    const navigation = document.querySelector(".lesson-page-navigation");
+    const lesson = document.querySelector(".main-content main");
+    if (navigation && lesson) lesson.append(navigation);
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     classifyDetails();
+    placeLessonNavigation();
     setupCompletion();
     setupReadingProgress();
     updateProgress();

@@ -175,7 +175,7 @@ with open("data/marks.txt", encoding="utf-8") as file:
 
 The code fails when the `data` folder does not exist in the current working directory.
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -194,7 +194,7 @@ print(Path.cwd())
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: what does a Python file wrap?</summary>
 
 The operating system gives Python a small identifier for an open file, called a **file descriptor**. Python adds buffering and, for text files, encoding and decoding. Buffering groups many small reads or writes for efficiency. Closing or leaving a `with` block releases these layers safely.
@@ -218,7 +218,7 @@ Try these problems on this page. Before coding, decide what the file should cont
 9. Build a file-based notes application.
 10. Build an expense tracker that saves data and calculates a total.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Use write mode and include a newline after each line.
@@ -234,7 +234,7 @@ Try these problems on this page. Before coding, decide what the file should cont
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. `with open(path, "w", encoding="utf-8") as file: file.write(text)`.
@@ -257,7 +257,3 @@ Create a journal program that appends dated entries to a file and provides a com
 ## Checkpoint
 
 Write a program that appends one expense per line and reads the file to calculate the total.
-
----
-
-Previous: [Functions](../10-functions/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Exception Handling](../12-exception-handling/lesson.md)

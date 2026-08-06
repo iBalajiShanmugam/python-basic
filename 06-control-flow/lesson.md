@@ -127,7 +127,7 @@ for letter in "Python":
     print(letter)
 ```
 
-<details>
+<details markdown="1">
 <summary>Preview: looping through dictionaries from Chapter 09</summary>
 
 ### Looping through a dictionary
@@ -297,7 +297,7 @@ for number in range(1, 5):
 
 The programmer expects `1` through `5`, but `range()` stops before its stop value.
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -318,7 +318,7 @@ for number in range(1, 6):
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: how does a <code>for</code> loop get values?</summary>
 
 Python asks the iterable for an **iterator**, an object that supplies one item at a time. The loop repeatedly asks that iterator for its next value. A special internal signal named `StopIteration` tells the loop that no items remain. Intermediate Python studies this protocol directly.
@@ -342,7 +342,7 @@ Try these problems on this page. Before coding, write the decision or repetition
 9. Print a multiplication table for a chosen number.
 10. Check whether a number is prime.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Compare the number with zero using `if` and `elif`.
@@ -358,7 +358,7 @@ Try these problems on this page. Before coding, write the decision or repetition
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. Use `if number > 0`, `elif number < 0`, otherwise zero.
@@ -381,7 +381,3 @@ Build a menu-driven quiz with five questions, a score counter, and a final resul
 ## Checkpoint
 
 Write a countdown from ten to five, explain why a `while` loop terminates, and find the largest of three values without using `max()`.
-
----
-
-Previous: [Input and Output](../05-input-and-output/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Strings](../07-strings/lesson.md)

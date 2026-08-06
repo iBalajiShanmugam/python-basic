@@ -91,7 +91,7 @@ middle_name = None
 
 `None` is not zero, an empty string, or `False`. It means that a value is missing or not available. Check it with `is None`.
 
-<details>
+<details markdown="1">
 <summary>Optional preview: types used in later courses</summary>
 
 These additional types are useful for files, networks, and advanced APIs. You do not need them in the Basic projects:
@@ -131,7 +131,7 @@ supplier_note = None
 
 Each type matches the meaning of the field. `product_code` is text even though it contains digits.
 
-<details>
+<details markdown="1">
 <summary>Optional preview: values that can and cannot change</summary>
 
 ## Mutable and immutable values
@@ -169,7 +169,7 @@ y = 45.50
 
 The code runs, but another learner cannot easily understand the names.
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -183,7 +183,7 @@ unit_price = 45.50
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: how does Python know a type?</summary>
 
 Every Python value is an object that remembers its own type. A variable name does not have a permanently fixed type; the name refers to an object, and the object has the type. That is why `type(value)` can inspect the value at runtime.
@@ -214,7 +214,7 @@ Try these problems on this page. For every answer, write down why you chose the 
 9. Store a missing middle name with `None`, then print the value and its type.
 10. Design the data types for a student record and justify each choice.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Think about the operations each field needs.
@@ -230,7 +230,7 @@ Try these problems on this page. For every answer, write down why you chose the 
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. Use `str`, `int`, `float`, `str`, `bool`, and `None` respectively.
@@ -253,7 +253,3 @@ Design a data model for an online order using at least eight variables. Add a co
 ## Checkpoint
 
 Choose suitable types for a person's name, age, salary, employee code, account status, and missing middle name. Explain each choice.
-
----
-
-Previous: [Python Fundamentals](../01-python-fundamentals/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Type Conversion](../03-type-conversion/lesson.md)

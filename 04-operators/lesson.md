@@ -552,7 +552,7 @@ second_name = "Maya"
 print(first_name == second_name)
 ```
 
-<details>
+<details markdown="1">
 <summary>Optional deeper explanation: why are <code>==</code> and <code>is</code> different?</summary>
 
 A variable name refers to a Python object.
@@ -614,7 +614,7 @@ Computers store integers using binary digits called **bits**. Bitwise operators 
 
 You do not need these operators for the remaining Basic lessons. Return to them when studying permissions, networking, graphics, or low-level data.
 
-<details>
+<details markdown="1">
 <summary>Show one bitwise example</summary>
 
 The number `5` is `101` in binary. The number `3` is `011`.
@@ -653,7 +653,7 @@ print("Shared with nothing left:", shared_equally)
 
 Before running it, predict all three output lines.
 
-<details>
+<details markdown="1">
 <summary>Show the output</summary>
 
 ```text
@@ -664,7 +664,7 @@ Shared with nothing left: False
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: how do operators work with objects?</summary>
 
 An operator is convenient syntax for an operation supported by an object's type. For example, `left + right` normally asks the left object to perform its special addition behavior, named `__add__`. These double-underscore names are often called **dunder methods**. You do not call them directly in Basic Python.
@@ -709,7 +709,7 @@ print(total)
 
 The shop wants `(price + delivery) * quantity`. Add parentheses to express that rule.
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter fixes</summary>
 
 ```python
@@ -781,7 +781,7 @@ print(17 % 5)
 print(2 ** 3 + 1)
 ```
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Multiply price and quantity.
@@ -797,7 +797,7 @@ print(2 ** 3 + 1)
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 ```python
@@ -891,7 +891,3 @@ Before moving forward, explain these answers in your own words:
 7. Why should normal values use `==` instead of `is`?
 
 If any answer is unclear, return to its section and run the example after changing one value.
-
----
-
-Previous: [Type Conversion](../03-type-conversion/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Input and Output](../05-input-and-output/lesson.md)

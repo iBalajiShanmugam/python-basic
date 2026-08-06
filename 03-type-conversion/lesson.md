@@ -142,7 +142,7 @@ print(bool(answer))
 
 Any non-empty string is truthy, even when its letters spell `False`.
 
-<details>
+<details markdown="1">
 <summary>Show Bug Hunter explanations</summary>
 
 ```python
@@ -162,7 +162,7 @@ print(answer_value)
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Optional deeper look: does conversion change the original value?</summary>
 
 No. Built-in conversion functions such as `int()`, `float()`, and `str()` return an object representing the converted value. The original object still exists while something refers to it. Store the returned value when you need it later.
@@ -193,7 +193,7 @@ Try these problems on this page. For each one, write the original type and the t
 9. Write three examples that cause `ValueError` when passed to `int()`.
 10. Create a conversion plan for stored text values representing quantity, price, and discount.
 
-<details>
+<details markdown="1">
 <summary>Show hints</summary>
 
 1. Save the original and converted values under different names.
@@ -209,7 +209,7 @@ Try these problems on this page. For each one, write the original type and the t
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Show solution ideas</summary>
 
 1. Use `age_text = "10"`, `age = int(age_text)`, and two `type()` calls.
@@ -232,7 +232,3 @@ Create a conversion notebook in code. Start with five stored values such as `"12
 ## Checkpoint
 
 Explain why `"25"` and `25` are different values. Then predict `bool(0)`, `bool(1)`, `bool("")`, and `bool("False")`.
-
----
-
-Previous: [Variables and Data Types](../02-variables-and-data-types/lesson.md) · [Course map](../COURSE_MAP.md) · [Course home](../README.md) · Next: [Operators](../04-operators/lesson.md)
